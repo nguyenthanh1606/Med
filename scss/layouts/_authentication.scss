@@ -1,7 +1,8 @@
 .page-auth {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
+  .logo {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
   footer {
     position: absolute;
@@ -37,67 +38,191 @@
     color: rgb(17, 24, 39);
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     border-radius: 16px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 10px 4px;
-    max-width: 900px;
-    min-height: 400px;
-    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 10px 4px;
+    width: 440px;
+    color: $color-text;
+    overflow: hidden;
     position: relative;
-    display: flex;
+    padding: 2rem 2.5rem;
+    z-index: 1;
 
-    &:after {
+    &.box-biger {
+      width: 840px;
+    }
+
+    &:before {
       content: '';
-      width: 100%;
-      height: 100%;
-      background-color: #777575;
       position: absolute;
-      left: -20px;
+      left: -10px;
       top: 0;
       z-index: -1;
+      width: 20px;
+      height: 100%;
+      background: rgb(6, 160, 33);
+      background: linear-gradient(0deg, rgba(6, 160, 33, 1) 0%, rgba(7, 80, 215, 1) 100%);
     }
   }
 
-  #parent {
+  .f-title {
+    font-family: $font-second;
+    font-weight: bold;
+  }
+
+  .form-group {
+    .form-label {
+      font-weight: 600;
+    }
+
+    .form-control,
+    .form-select {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-color: #cbcccd;
+      border-radius: 8px;
+
+      &.form-pin {
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+      }
+
+      &:active,
+      &:focus {
+        box-shadow: none;
+        border-color: $color-second;
+      }
+
+      option {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    .input-group-text {
+      background-color: transparent;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      color: #c9c7c7;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .form-desc {
+    padding-top: 1rem;
+    font-weight: 500;
+
+    &.drawTop {
+      border-top: 1px solid $color-border;
+    }
+  }
+
+  .form-sub-desc {
+    font-size: small;
+    font-weight: 500;
+  }
+
+  .btn-submit {
+    width: 100%;
+    max-width: 440px;
+    font-weight: 600;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    background-color: $color-second;
+    border-color: $color-second;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    justify-content: center;
+
+    &:focus,
+    &:active,
+    &:hover {
+      box-shadow: 0 0 10px 1px $color-border;
+    }
+
+    i {
+      display: inline-block;
+      width: 8px;
+      margin-left: 8px;
+      padding: 9px;
+      border-radius: 50%;
+      background-color: #cccccc7d;
+      font-size: 10px;
+      vertical-align: middle;
+      display: flex;
+      width: 26px;
+      height: 26px;
+      vertical-align: middle;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+  }
+
+  .forgotPassword {
+    font-size: small;
+  }
+
+  .form-sub {
+    .form-hr {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: $color-border;
+        z-index: -1;
+      }
+
+      p {
+        display: inline-block;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        background-color: #fff;
+        margin-bottom: 0;
+        z-index: 1;
+        font-weight: 600;
+        color: #6d6e6d;
+      }
+    }
+  }
+
+  .drawY {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+  }
+
+  .select-job {
+    background-color: #e0f9e4;
+    color: #535252;
+    font-weight: 600;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-radius: 0.5rem;
     position: relative;
-    z-index: 1;
-  }
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
 
-  #pseudo-parent {
-    position: absolute;
-  }
+    svg {
+      position: absolute;
+      right: 10px;
+      filter: invert(38%) sepia(35%) saturate(872%) hue-rotate(80deg) brightness(99%) contrast(88%);
+    }
 
-  /* no z-index required */
-  #pseudo-parent:after {
-    position: absolute;
-    z-index: -1;
-  }
-
-  /* Example styling to illustrate */
-  #pseudo-parent {
-    background: #d1d1d1;
-  }
-
-  #pseudo-parent:after {
-    margin-left: -3px;
-    content: "M"
-  }
-
-  .boxed {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    background-clip: padding-box;
-    border: 10px solid transparent;
-    background-color: #191a28;
-    border-radius: 20px;
-  }
-
-  .boxed:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    margin: -10px;
-    background-image: linear-gradient(to right top, #2979ff, #07a787);
-    border-radius: inherit;
+    &.selected,
+    &:hover {
+      color: #fff;
+      background-color: $color-second;
+      svg{
+        filter: none;
+      }
+    }
   }
 }
