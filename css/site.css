@@ -248,4 +248,18 @@ html, body {
 .page-auth .select-job.selected svg, .page-auth .select-job:hover svg {
   filter: none;
 }
+
+.page-auth .formSignin {
+  transition: all 0.4s ease-in-out;
+}
+
+.page-auth .hide {
+  visibility: hidden;
+  height: 0;
+}
+
+.page-auth .show {
+  visibility: initial;
+  height: auto;
+}
 /*# sourceMappingURL=site.css.map */

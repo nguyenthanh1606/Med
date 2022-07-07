@@ -227,4 +227,15 @@
       }
     }
   }
+  .formSignin{
+    transition: all 0.4s ease-in-out;
+  }
+  .hide{
+    visibility: hidden;
+    height: 0;
+  }
+  .show{
+    visibility: initial;
+    height: auto;
+  }
 }
