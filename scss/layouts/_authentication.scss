@@ -32,35 +32,42 @@
       }
     }
   }
-
+  .box-parent{
+    background: linear-gradient(0deg, #06a021 0%, #0750d7 100%);
+    padding-left: 11px;
+    border-radius: 21px;
+  }
   .box-login {
     background-color: rgb(255, 255, 255);
     color: rgb(17, 24, 39);
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 10px 4px;
     width: 440px;
     color: $color-text;
     overflow: hidden;
     position: relative;
     padding: 2rem 2.5rem;
-    z-index: 1;
 
     &.box-biger {
       width: 840px;
     }
 
-    &:before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 0;
-      z-index: -1;
-      width: 20px;
-      height: 100%;
-      background: rgb(6, 160, 33);
-      background: linear-gradient(0deg, rgba(6, 160, 33, 1) 0%, rgba(7, 80, 215, 1) 100%);
-    }
+    // border-left: 11px solid #ccc;
+    // border-image: linear-gradient(to top,
+    //   rgba(6, 160, 33, 1),
+    //   rgba(7, 80, 215, 1)) 1 100%;
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   left: -10px;
+    //   top: 0;
+    //   z-index: -1;
+    //   width: 20px;
+    //   height: 100%;
+    //   background: rgb(6, 160, 33);
+    //   background: linear-gradient(0deg, rgba(6, 160, 33, 1) 0%, rgba(7, 80, 215, 1) 100%);
+    // }
   }
 
   .f-title {
@@ -133,7 +140,6 @@
     padding-bottom: 10px;
     background-color: $color-second;
     border-color: $color-second;
-    transition: all 0.4s ease-in-out;
     display: flex;
     justify-content: center;
 
@@ -222,19 +228,24 @@
     &:hover {
       color: #fff;
       background-color: $color-second;
-      svg{
+
+      svg {
         filter: none;
       }
     }
   }
-  .formSignin{
-    transition: all 0.4s ease-in-out;
-  }
-  .hide{
+
+  // .formSignin,
+  // .formFogotPass {
+  //   transition: all 0.4s ease-in-out;
+  // }
+
+  .hide {
     visibility: hidden;
     height: 0;
   }
-  .show{
+
+  .show {
     visibility: initial;
     height: auto;
   }
