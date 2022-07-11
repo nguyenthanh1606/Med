@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="147.43" height="75.62" viewBox="0 0 147.43 75.62">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #009cef;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="1034.69" y="1232.16" width="147.43" height="75.62" filterUnits="userSpaceOnUse">
+      <feImage preserveAspectRatio="none" x="1034.69" y="1232.16" width="147.43" height="75.62" result="image" xlink:href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTQ3LjQzIiBoZWlnaHQ9Ijc1LjYyIiB2aWV3Qm94PSIwIDAgMTQ3LjQzIDc1LjYyIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiB1cmwoI2xpbmVhci1ncmFkaWVudCk7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjYzLjU4NCIgeDI9IjgzLjg0NiIgeTI9Ijc1LjYyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4wNyIgc3RvcC1jb2xvcj0iIzA3NTBkNyIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuOTMiIHN0b3AtY29sb3I9IiMwNmE3MTEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IGNsYXNzPSJjbHMtMSIgd2lkdGg9IjE0Ny40MyIgaGVpZ2h0PSI3NS42MiIvPgo8L3N2Zz4K"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path class="cls-1" d="M1155.72,1246.43c-20.42-30.37-45.4-2.87-45.4-2.87s-36.95,32.91-42.35,37.97c-18.56,16.2-29.87,3.71-33.24,1.85-1.02,26.67,27.84,27.85,41.17,19.24,13.16-9.62,47.59-41.51,52.65-46.23C1135.47,1251.32,1137.66,1244.24,1155.72,1246.43Zm20.41,21.6c-12.6-22.6-29.44-13.16-33.49-9.96s-27.35,24.22-31.22,27.85c-13.3,11.6-14.79,10.44-19.4,10.29,3.49,11.34,19.39,14.69,28.94,8.52,10.6-7.23,33.24-28.51,36.87-31.89C1162.78,1269.21,1163.2,1266.46,1176.13,1268.03Zm-34,33.66c2.53-2.53,16.54-15.35,22.61-21.09,11.99-10.8,17.05,1.18,17.38,4.22C1181.45,1311.82,1146.69,1309.79,1142.13,1301.69Z" transform="translate(-1034.69 -1232.16)"/>
+</svg>

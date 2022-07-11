@@ -1,20 +1,268 @@
-html, body{
+html,
+body {
   background-color: $color-bg;
 }
-.link{
+
+.link {
   text-decoration: none;
   color: $color-text;
-  &.link-decoration{
+
+  &.link-decoration {
     text-decoration: underline;
   }
-  &.link-primary{
-    color: $color-second !important;
+
+  &.link-primary {
+    color: $color-second  !important;
   }
-  &:hover,&:active,&:focus{
+
+  &:hover,
+  &:active,
+  &:focus {
     color: $color-second;
   }
 }
-.bar{
+
+.bar {
   color: #abadb0;
   font-size: 30px;
+}
+
+.breadcrumb {
+  .breadcrumb-item {
+    a {
+      color: #090909;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &+.breadcrumb-item {
+      &::before {
+        content: '\f0da';
+        font-family: 'Font Awesome 5 Pro';
+        font-weight: 800;
+      }
+    }
+  }
+}
+
+.toast {
+  border-radius: 1.25rem;
+  background-color: $color-primary;
+  color: #fff;
+  position: relative;
+
+  &-body {
+    padding-bottom: 0;
+  }
+
+  .toast-content {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  button {
+    background: transparent;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+    i {
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+}
+
+.box-tile {
+  border-radius: 1.25rem;
+  box-shadow: 0 0 10px 1px #ccc;
+  overflow: hidden;
+
+  .thumb {
+    position: relative;
+
+    .thumnails-template {
+      @include thumnails-template(73%);
+      border: none;
+    }
+
+    .thumb-layer {
+      &.hide {
+        display: none;
+      }
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 50%;
+      width: 100%;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(0deg, $color-primary 0%, $color-primary 10%, rgba(0, 0, 0, 0) 100%);
+      display: flex;
+      padding-left: 30px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      span {
+        padding-left: 10px;
+        color: #fff;
+        border-left: 3px solid #fff;
+      }
+    }
+  }
+
+  .content {
+    padding-left: 0;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &.bg-default {
+        background-color: #073488;
+      }
+
+      &--left {
+        padding: 12px 10px;
+        position: relative;
+
+        .title {
+          padding-left: 45px;
+          color: #fff;
+          font-size: 1rem;
+          margin-bottom: 0;
+          text-decoration: none;
+        }
+
+        &::before {
+          content: url(../../assets/icons/tutorial.svg);
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          left: 20px;
+          top: calc(50% - 10px);
+        }
+      }
+
+      &--right {
+        padding: 12px 15px;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+        svg {
+          margin-bottom: 3px;
+        }
+      }
+    }
+
+    &-tabs {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 0;
+        list-style-type: none;
+        margin-bottom: 5px;
+
+        li {
+          margin-right: 12px;
+          margin-bottom: 12px;
+        }
+
+        a {
+          font-weight: 600;
+          font-size: 0.85rem;
+          border-radius: 10px;
+          display: inline-block;
+          padding: 5px 10px;
+          background-color: #e1e9fa;
+          color: #2651a0;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    &-main {
+      >div {
+        margin-bottom: 5px;
+      }
+
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .title {
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 1.5rem;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+
+      span {
+        font-family: $font-second;
+        color: #939794;
+        border-left: 4px solid #939794;
+        line-height: 1;
+        font-weight: 600;
+      }
+
+      p {
+        font-family: $font-second;
+        color: #191a1a;
+        font-size: 1.05rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .info {
+    border-top: 1px solid #cbcccd;
+    border-bottom: 1px solid #cbcccd;
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      &-logo {
+        padding-right: 1rem;
+
+        img {
+          width: 50px;
+        }
+      }
+
+      &-info {
+        span {
+          display: block;
+        }
+
+        .brand-info1 {
+          color: #a7a8a7;
+          font-weight: 600;
+          font-size: .9em;
+        }
+
+        .brand-info2 {
+          color: #030303;
+          font-weight: 600;
+        }
+      }
+    }
+  }
 }

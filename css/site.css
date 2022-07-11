@@ -2,7 +2,8 @@ html, body {
   font-family: 'Quicksand', serif;
 }
 
-html, body {
+html,
+body {
   background-color: #eef2f5;
 }
 
@@ -26,6 +27,267 @@ html, body {
 .bar {
   color: #abadb0;
   font-size: 30px;
+}
+
+.breadcrumb .breadcrumb-item a {
+  color: #090909;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumb .breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: '\f0da';
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 800;
+}
+
+.toast {
+  border-radius: 1.25rem;
+  background-color: #0750d7;
+  color: #fff;
+  position: relative;
+}
+
+.toast-body {
+  padding-bottom: 0;
+}
+
+.toast .toast-content p {
+  margin-bottom: 0;
+}
+
+.toast button {
+  background: transparent;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.toast button i {
+  color: #fff;
+  font-size: 20px;
+}
+
+.box-tile {
+  border-radius: 1.25rem;
+  box-shadow: 0 0 10px 1px #ccc;
+  overflow: hidden;
+}
+
+.box-tile .thumb {
+  position: relative;
+}
+
+.box-tile .thumb .thumnails-template {
+  position: relative;
+  overflow: hidden;
+  transition: .4s ease;
+  border: 1px solid;
+  border-color: transparent;
+  font-size: 0px;
+  display: block;
+  border: none;
+}
+
+.box-tile .thumb .thumnails-template:before {
+  content: "";
+  display: block;
+  padding-top: 73%;
+}
+
+.box-tile .thumb .thumnails-template .thumnails-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+.box-tile .thumb .thumnails-template .thumnails-content img {
+  width: 100%;
+  height: auto;
+}
+
+.box-tile .thumb .thumnails-template:hover {
+  transition: 0.4s ease-in-out;
+}
+
+.box-tile .thumb .thumb-layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background: #020024;
+  background: linear-gradient(0deg, #0750d7 0%, #0750d7 10%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.box-tile .thumb .thumb-layer.hide {
+  display: none;
+}
+
+.box-tile .thumb .thumb-layer span {
+  padding-left: 10px;
+  color: #fff;
+  border-left: 3px solid #fff;
+}
+
+.box-tile .content {
+  padding-left: 0;
+}
+
+.box-tile .content-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box-tile .content-top.bg-default {
+  background-color: #073488;
+}
+
+.box-tile .content-top--left {
+  padding: 12px 10px;
+  position: relative;
+}
+
+.box-tile .content-top--left .title {
+  padding-left: 45px;
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0;
+  text-decoration: none;
+}
+
+.box-tile .content-top--left::before {
+  content: url(../../assets/icons/tutorial.svg);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 10px);
+}
+
+.box-tile .content-top--right {
+  padding: 12px 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box-tile .content-top--right svg {
+  margin-bottom: 3px;
+}
+
+.box-tile .content-tabs {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.box-tile .content-tabs ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+
+.box-tile .content-tabs ul li {
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+.box-tile .content-tabs ul a {
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #e1e9fa;
+  color: #2651a0;
+  text-decoration: none;
+}
+
+.box-tile .content-tabs ul a:hover {
+  text-decoration: underline;
+}
+
+.box-tile .content-main {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.box-tile .content-main > div {
+  margin-bottom: 5px;
+}
+
+.box-tile .content-main .title {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.box-tile .content-main .title:hover {
+  color: #0750d7;
+}
+
+.box-tile .content-main span {
+  font-family: "EB Garamond", serif;
+  color: #939794;
+  border-left: 4px solid #939794;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.box-tile .content-main p {
+  font-family: "EB Garamond", serif;
+  color: #191a1a;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+.box-tile .info {
+  border-top: 1px solid #cbcccd;
+  border-bottom: 1px solid #cbcccd;
+}
+
+.box-tile .info .brand {
+  display: flex;
+  align-items: center;
+}
+
+.box-tile .info .brand-logo {
+  padding-right: 1rem;
+}
+
+.box-tile .info .brand-logo img {
+  width: 50px;
+}
+
+.box-tile .info .brand-info span {
+  display: block;
+}
+
+.box-tile .info .brand-info .brand-info1 {
+  color: #a7a8a7;
+  font-weight: 600;
+  font-size: .9em;
+}
+
+.box-tile .info .brand-info .brand-info2 {
+  color: #030303;
+  font-weight: 600;
 }
 
 .page-auth .logo {
@@ -296,6 +558,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .dashboard header .header-middle .form-group {
@@ -330,6 +593,38 @@ html, body {
 
 .dashboard header .header-middle .form-control:focus, .dashboard header .header-middle .form-control:active {
   box-shadow: none;
+}
+
+.dashboard header .header-middle .notification {
+  position: absolute;
+  top: calc(50% - 12.5px);
+  right: 1rem;
+  display: flex;
+}
+
+.dashboard header .header-middle .notification .alter {
+  margin-right: 1.5rem;
+}
+
+.dashboard header .header-middle .notification .alter,
+.dashboard header .header-middle .notification .email {
+  font-size: 25px;
+  color: #b6b6b6;
+  position: relative;
+  padding-right: 4px;
+}
+
+.dashboard header .header-middle .notification .haveit {
+  display: inline-block;
+  background-color: #a81010;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  border: 3px solid #fff;
+  box-sizing: content-box;
 }
 
 .dashboard header .header-right {
@@ -383,5 +678,19 @@ html, body {
 
 .dashboard header .header-right .user-button:hover i {
   color: #06a021;
+}
+
+.dashboard main {
+  margin-top: 1.25rem;
+}
+
+.dashboard main .name-page {
+  font-family: "EB Garamond", serif;
+  font-weight: bold;
+}
+
+.dashboard main .sw-banner {
+  border-radius: 1.25rem;
+  box-shadow: 0 0 10px 1px #ccc;
 }
 /*# sourceMappingURL=site.css.map */

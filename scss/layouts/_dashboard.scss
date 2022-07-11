@@ -37,10 +37,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .form-group{
+    position: relative;
+
+    .form-group {
       width: 100%;
     }
-    .input-group{
+
+    .input-group {
       min-width: 400px;
       width: 60%;
       margin: auto;
@@ -64,8 +67,42 @@
       border-radius: 16px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
-      &:focus, &:active{
+
+      &:focus,
+      &:active {
         box-shadow: none;
+      }
+    }
+
+    .notification {
+      position: absolute;
+      top: calc(50% - 12.5px);
+      right: 1rem;
+      display: flex;
+
+      .alter {
+        margin-right: 1.5rem;
+      }
+
+      .alter,
+      .email {
+        font-size: 25px;
+        color: #b6b6b6;
+        position: relative;
+        padding-right: 4px;
+      }
+
+      .haveit {
+        display: inline-block;
+        background-color: #a81010;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        top: 4px;
+        right: 0;
+        border: 3px solid #fff;
+        box-sizing: content-box;
       }
     }
   }
@@ -123,5 +160,19 @@
         }
       }
     }
+  }
+}
+
+.dashboard main {
+  margin-top: 1.25rem;
+
+  .name-page {
+    font-family: $font-second;
+    font-weight: bold;
+  }
+
+  .sw-banner {
+    border-radius: 1.25rem;
+    box-shadow: 0 0 10px 1px #ccc;
   }
 }
