@@ -3,6 +3,9 @@
 @import 'resets/fonts';
 @import 'resets/mixin';
 
+@import './components/button';
+@import './components/menu';
+
 @import './components/default';
 
 @import './layouts/authentication';

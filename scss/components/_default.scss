@@ -3,6 +3,29 @@ body {
   background-color: $color-bg;
 }
 
+/* SCROLL BAR */
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: #555;
+}
+
+/* END SCROLL BAR */
+
+
 .link {
   text-decoration: none;
   color: $color-text;
@@ -78,10 +101,23 @@ body {
   }
 }
 
+.bg-default {
+  background-color: #073488;
+}
+
+.bg-last {
+  background-color: #606060;
+}
+
+.bg-new {
+  background-color: $color-second;
+}
+
 .box-tile {
   border-radius: 1.25rem;
   box-shadow: 0 0 10px 1px #ccc;
   overflow: hidden;
+  position: relative;
 
   .thumb {
     position: relative;
@@ -126,9 +162,7 @@ body {
       justify-content: space-between;
       align-items: center;
 
-      &.bg-default {
-        background-color: #073488;
-      }
+
 
       &--left {
         padding: 12px 10px;
@@ -143,7 +177,8 @@ body {
         }
 
         &::before {
-          content: url(../../assets/icons/tutorial.svg);
+          content: '';
+          background: url('../assets/icons/tutorial.svg');
           width: 30px;
           height: 30px;
           position: absolute;
@@ -234,8 +269,12 @@ body {
   .info {
     border-top: 1px solid #cbcccd;
     border-bottom: 1px solid #cbcccd;
+    display: flex;
+    flex-direction: row;
 
     .brand {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
       display: flex;
       align-items: center;
 
@@ -263,6 +302,343 @@ body {
           font-weight: 600;
         }
       }
+    }
+  }
+
+  .event-time {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+    display: flex;
+    flex-direction: column;
+
+    svg {
+      width: 40px;
+    }
+  }
+
+  .event-register {
+    display: flex;
+    flex-direction: row;
+
+    &--left {
+      padding: 8px 15px;
+      flex: 0 0 70%;
+      max-width: 70%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .item {
+        .icon {
+          padding-right: 6px;
+          color: $color-primary;
+          display: inline-block;
+
+          i {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    &--right {
+      padding: 8px 15px;
+      border-left: 1px solid $color-border;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 87px;
+    height: 50px;
+    background: url('../assets/icons/icon-af.svg');
+    background-position: top;
+  }
+}
+
+.box-list {
+  &-item {
+    border-radius: 1.25rem;
+    box-shadow: 0 0 10px 1px #ccc;
+    overflow: hidden;
+    position: relative;
+
+    .thumb {
+      position: relative;
+
+      .thumnails-template {
+        @include thumnails-template(73%);
+        border: none;
+      }
+
+      .thumb-layer {
+        &.hide {
+          display: none;
+        }
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 50%;
+        width: 100%;
+        background: rgb(2, 0, 36);
+        background: linear-gradient(0deg, $color-primary 0%, $color-primary 10%, rgba(0, 0, 0, 0) 100%);
+        display: flex;
+        padding-left: 30px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        span {
+          padding-left: 10px;
+          color: #fff;
+          border-left: 3px solid #fff;
+        }
+      }
+    }
+
+    .content {
+      padding-left: 0;
+
+      &-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+
+        &--left {
+          padding: 12px 10px;
+          position: relative;
+
+          .title {
+            padding-left: 45px;
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 0;
+            text-decoration: none;
+          }
+
+          &::before {
+            content: '';
+            background: url('../assets/icons/tutorial.svg');
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 20px;
+            top: calc(50% - 10px);
+          }
+        }
+
+        &--right {
+          padding: 12px 15px;
+          border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+          svg {
+            margin-bottom: 3px;
+          }
+        }
+      }
+
+      &-tabs {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        ul {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding-left: 0;
+          list-style-type: none;
+          margin-bottom: 5px;
+
+          li {
+            margin-right: 12px;
+            margin-bottom: 12px;
+          }
+
+          a {
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #e1e9fa;
+            color: #2651a0;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      &-main {
+        >div {
+          margin-bottom: 5px;
+        }
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .title {
+          font-weight: 600;
+          text-decoration: none;
+          font-size: 1.35rem;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+
+        span {
+          font-family: $font-second;
+          color: #939794;
+          border-left: 4px solid #939794;
+          line-height: 1;
+          font-weight: 600;
+        }
+
+        p {
+          font-family: $font-second;
+          color: #191a1a;
+          font-size: 1.05rem;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .info {
+      border-top: 1px solid #cbcccd;
+      border-bottom: 1px solid #cbcccd;
+      display: flex;
+      flex-direction: row;
+
+      .brand {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+
+        &-logo {
+          padding-right: 1rem;
+
+          img {
+            width: 50px;
+          }
+        }
+
+        &-info {
+          span {
+            display: block;
+          }
+
+          .brand-info1 {
+            color: #a7a8a7;
+            font-weight: 600;
+            font-size: .9em;
+          }
+
+          .brand-info2 {
+            color: #030303;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .event-time {
+        flex: 0 0 50%;
+        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+
+        svg {
+          width: 40px;
+        }
+      }
+    }
+
+    .event-register {
+      display: flex;
+      flex-direction: column;
+
+      &--left {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $color-border;
+
+        .item {
+          padding: 10px 15px;
+
+          &:not(:last-child) {
+            border-right: 1px solid $color-border;
+          }
+
+          .icon {
+            padding-right: 6px;
+            color: $color-primary;
+            display: inline-block;
+
+            i {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      &--right {
+        padding: 8px 15px;
+        border-left: 1px solid $color-border;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 87px;
+      height: 50px;
+      background: url('../assets/icons/icon-af.svg');
+      background-position: top;
+    }
+  }
+}
+
+.card-parent {
+  background: linear-gradient(0deg, #06a021 0%, #0750d7 100%);
+  padding-left: 11px;
+  border-radius: 21px;
+
+  .card-ds {
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 24, 39);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 10px 4px;
+    color: $color-text;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    padding-bottom: 0.5rem;
+
+    .card-header {
+      background-color: transparent;
+      padding-top: 1rem;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .card-body {
+      font-family: $font-second;
     }
   }
 }
