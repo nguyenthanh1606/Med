@@ -74,4 +74,130 @@
       }
     }
   }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 40px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+  }
+}
+
+.mnl {
+  position: fixed;
+  left: -300px;
+  // left: 0;
+  top: calc(105px);
+  bottom: 0;
+  width: 300px;
+  background-color: #fff;
+  z-index: 1000;
+
+  ul.lv1 {
+    list-style-type: none;
+    padding-left: 0;
+
+    a {
+      text-decoration: none;
+      color: #090909;
+    }
+
+    >li {
+      font-weight: 500;
+      position: relative;
+
+      >a {
+        padding: 25px 20px 25px 30px;
+        display: flex;
+        vertical-align: middle;
+
+        .icon {
+          margin-right: 25px;
+          height: 25px;
+        }
+      }
+
+      &.active {
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: #a9a9aa;
+          width: 6px;
+        }
+
+        background-color: #f8fafc;
+
+        a {
+          color: $color-primary;
+          font-weight: 600;
+        }
+      }
+
+      &:hover {
+        background-color: #f8fafc;
+
+        >a {
+          color: $color-primary;
+        }
+      }
+
+      &.hasChild {
+        transition: height 0.3s ease-in-out;
+        &::after {
+          content: "\f078";
+          position: absolute;
+          right: 15px;
+          top: 25px;
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 400;
+          color: #b6b6b6;
+        }
+      }
+      &.endGroup {
+        border-bottom: 1px solid #eeeaea;
+      }
+      &.childClose{
+        ul.lv2{
+          height: 0;
+          overflow: hidden;
+        }
+      }
+      &:not(.childClose){
+        ul.lv2{
+          height: auto;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+
+  ul.lv2 {
+    margin-top: -18px;
+    padding-left: 30px;
+    list-style-type: none;
+
+    li {
+      padding-left: 25px;
+
+      a {
+        display: inline-block;
+        padding: 8px 18px;
+        width: 100%;
+      }
+
+      &:hover {
+        a {
+          color: $color-primary;
+        }
+      }
+    }
+  }
 }
