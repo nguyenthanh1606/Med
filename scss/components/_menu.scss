@@ -5,8 +5,7 @@
   position: absolute;
   right: 10px;
   z-index: 1000;
-  transition: top 400ms ease-in-out;
-  transition: opacity 400ms ease-in-out;
+  transition: top 400ms ease-in-out, opacity 400ms ease-in-out;
   top: -500px;
   opacity: 0;
 
@@ -88,15 +87,74 @@
   }
 }
 
+.mnl-button {
+  position: absolute;
+  top: calc(105px + 100px);
+  left: 0;
+  z-index: 999;
+  width: 25px;
+  height: 180px;
+  background-color: #e1e2e2;
+  border-radius: 0 18px 18px 0;
+  cursor: pointer;
+
+  i {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 30%;
+    font-size: 20px;
+    color: #828583;
+  }
+
+  &:hover i {
+    animation-duration: 0.5s;
+    animation-name: right-right;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: forward;
+  }
+
+  @keyframes right-right {
+    0% {
+      left: 30%;
+      opacity: 1;
+    }
+
+    100% {
+      left: calc(30% + 8px);
+      opacity: 0;
+    }
+  }
+}
+
 .mnl {
   position: fixed;
   left: -300px;
   // left: 0;
-  top: calc(105px);
+  top: 0;
   bottom: 0;
   width: 300px;
   background-color: #fff;
   z-index: 1000;
+  opacity: 0;
+  transition: left 400ms ease-in-out, opacity 400ms ease-in-out;
+  box-shadow: 3px 0px 10px 1px rgba(204, 204, 204, 0.5);
+  .top-logo{
+    height: 105px;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 20px;
+    .bar{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+  &.show {
+    left: 0;
+    opacity: 1;
+  }
 
   ul.lv1 {
     list-style-type: none;
@@ -111,17 +169,31 @@
       font-weight: 500;
       position: relative;
 
-      >a {
+      >a, >span {
         padding: 25px 20px 25px 30px;
         display: flex;
         vertical-align: middle;
+        cursor: pointer;
 
         .icon {
-          margin-right: 25px;
+          margin-right: 20px;
           height: 25px;
+          width: 30px;
         }
       }
+      &.hasChild {
+        transition: height 0.3s ease-in-out;
 
+        &::after {
+          content: "\f078";
+          position: absolute;
+          right: 15px;
+          top: 25px;
+          font-family: 'Font Awesome 5 Pro';
+          font-weight: 400;
+          color: #b6b6b6;
+        }
+      }
       &.active {
         &:before {
           content: "";
@@ -135,47 +207,56 @@
 
         background-color: #f8fafc;
 
-        a {
+        a, span {
           color: $color-primary;
           font-weight: 600;
+        }
+
+        &:after {
+          color: $color-primary;
+        }
+
+        .icon {
+          filter: invert(16%) sepia(64%) saturate(6026%) hue-rotate(218deg) brightness(91%) contrast(94%);
         }
       }
 
       &:hover {
         background-color: #f8fafc;
 
-        >a {
+        &:after {
           color: $color-primary;
+        }
+
+        >a, >span {
+          color: $color-primary;
+        }
+
+        .icon {
+          filter: invert(16%) sepia(64%) saturate(6026%) hue-rotate(218deg) brightness(91%) contrast(94%);
         }
       }
 
-      &.hasChild {
-        transition: height 0.3s ease-in-out;
-        &::after {
-          content: "\f078";
-          position: absolute;
-          right: 15px;
-          top: 25px;
-          font-family: 'Font Awesome 5 Pro';
-          font-weight: 400;
-          color: #b6b6b6;
-        }
-      }
+     
+
       &.endGroup {
         border-bottom: 1px solid #eeeaea;
       }
-      &.childClose{
-        ul.lv2{
-          height: 0;
-          overflow: hidden;
-        }
-      }
-      &:not(.childClose){
-        ul.lv2{
-          height: auto;
-          overflow: hidden;
-        }
-      }
+
+      // &.childClose {
+      //   ul.lv2 {
+      //     margin-top: 0;
+      //     height: 0;
+      //     overflow: hidden;
+      //   }
+      // }
+
+      // &:not(.childClose) {
+      //   ul.lv2 {
+      //     height: auto;
+      //     overflow: hidden;
+      //   }
+      // }
     }
   }
 
