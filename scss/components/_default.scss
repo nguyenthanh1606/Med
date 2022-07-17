@@ -642,3 +642,31 @@ body::-webkit-scrollbar-thumb {
     }
   }
 }
+
+.overpage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+  // background: #000;
+  z-index: 100;
+  opacity: 0.4;
+  display: none;
+  &.show{
+    display: block;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1220px;
+  }
+}

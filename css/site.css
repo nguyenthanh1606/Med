@@ -68,8 +68,7 @@ html, body {
   position: absolute;
   right: 10px;
   z-index: 1000;
-  transition: top 400ms ease-in-out;
-  transition: opacity 400ms ease-in-out;
+  transition: top 400ms ease-in-out, opacity 400ms ease-in-out;
   top: -500px;
   opacity: 0;
 }
@@ -145,14 +144,75 @@ html, body {
   border-bottom: 8px solid white;
 }
 
+.mnl-button {
+  position: absolute;
+  top: calc(105px + 100px);
+  left: 0;
+  z-index: 999;
+  width: 25px;
+  height: 180px;
+  background-color: #e1e2e2;
+  border-radius: 0 18px 18px 0;
+  cursor: pointer;
+}
+
+.mnl-button i {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 30%;
+  font-size: 20px;
+  color: #828583;
+}
+
+.mnl-button:hover i {
+  animation-duration: 0.5s;
+  animation-name: right-right;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: forward;
+}
+
+@keyframes right-right {
+  0% {
+    left: 30%;
+    opacity: 1;
+  }
+  100% {
+    left: calc(30% + 8px);
+    opacity: 0;
+  }
+}
+
 .mnl {
   position: fixed;
   left: -300px;
-  top: calc(105px);
+  top: 0;
   bottom: 0;
   width: 300px;
   background-color: #fff;
   z-index: 1000;
+  opacity: 0;
+  transition: left 400ms ease-in-out, opacity 400ms ease-in-out;
+  box-shadow: 3px 0px 10px 1px rgba(204, 204, 204, 0.5);
+}
+
+.mnl .top-logo {
+  height: 105px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.mnl .top-logo .bar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.mnl.show {
+  left: 0;
+  opacity: 1;
 }
 
 .mnl ul.lv1 {
@@ -170,42 +230,17 @@ html, body {
   position: relative;
 }
 
-.mnl ul.lv1 > li > a {
+.mnl ul.lv1 > li > a, .mnl ul.lv1 > li > span {
   padding: 25px 20px 25px 30px;
   display: flex;
   vertical-align: middle;
+  cursor: pointer;
 }
 
-.mnl ul.lv1 > li > a .icon {
-  margin-right: 25px;
+.mnl ul.lv1 > li > a .icon, .mnl ul.lv1 > li > span .icon {
+  margin-right: 20px;
   height: 25px;
-}
-
-.mnl ul.lv1 > li.active {
-  background-color: #f8fafc;
-}
-
-.mnl ul.lv1 > li.active:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  background-color: #a9a9aa;
-  width: 6px;
-}
-
-.mnl ul.lv1 > li.active a {
-  color: #0750d7;
-  font-weight: 600;
-}
-
-.mnl ul.lv1 > li:hover {
-  background-color: #f8fafc;
-}
-
-.mnl ul.lv1 > li:hover > a {
-  color: #0750d7;
+  width: 30px;
 }
 
 .mnl ul.lv1 > li.hasChild {
@@ -222,18 +257,51 @@ html, body {
   color: #b6b6b6;
 }
 
+.mnl ul.lv1 > li.active {
+  background-color: #f8fafc;
+}
+
+.mnl ul.lv1 > li.active:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #a9a9aa;
+  width: 6px;
+}
+
+.mnl ul.lv1 > li.active a, .mnl ul.lv1 > li.active span {
+  color: #0750d7;
+  font-weight: 600;
+}
+
+.mnl ul.lv1 > li.active:after {
+  color: #0750d7;
+}
+
+.mnl ul.lv1 > li.active .icon {
+  filter: invert(16%) sepia(64%) saturate(6026%) hue-rotate(218deg) brightness(91%) contrast(94%);
+}
+
+.mnl ul.lv1 > li:hover {
+  background-color: #f8fafc;
+}
+
+.mnl ul.lv1 > li:hover:after {
+  color: #0750d7;
+}
+
+.mnl ul.lv1 > li:hover > a, .mnl ul.lv1 > li:hover > span {
+  color: #0750d7;
+}
+
+.mnl ul.lv1 > li:hover .icon {
+  filter: invert(16%) sepia(64%) saturate(6026%) hue-rotate(218deg) brightness(91%) contrast(94%);
+}
+
 .mnl ul.lv1 > li.endGroup {
   border-bottom: 1px solid #eeeaea;
-}
-
-.mnl ul.lv1 > li.childClose ul.lv2 {
-  height: 0;
-  overflow: hidden;
-}
-
-.mnl ul.lv1 > li:not(.childClose) ul.lv2 {
-  height: auto;
-  overflow: hidden;
 }
 
 .mnl ul.lv2 {
@@ -937,6 +1005,33 @@ body::-webkit-scrollbar-thumb {
   font-family: "EB Garamond", serif;
 }
 
+.overpage {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 100;
+  opacity: 0.4;
+  display: none;
+}
+
+.overpage.show {
+  display: block;
+}
+
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1220px;
+  }
+}
+
 .page-auth .logo {
   padding-top: 30px;
   margin-bottom: 30px;
@@ -1134,7 +1229,7 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   height: 105px;
   background-color: #fff;
-  box-shadow: 0 4px 10px 1px #ccc;
+  box-shadow: 0 3px 10px 1px rgba(204, 204, 204, 0.5);
   z-index: 1005;
 }
 
