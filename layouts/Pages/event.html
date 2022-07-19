@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Med</title>
+
+  <!-- Google Fonts Quicksand + EB Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,600;0,800;1,400;1,600;1,800&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap v5.2.0 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Fonts Ansoware Pro 5.2 -->
+  <link rel="stylesheet" href="../../css/all.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="../../css/site.css">
+</head>
+
+<body class="dashboard">
+  <header>
+    <div class="container-fluid header">
+      <div class="row">
+        <div class="col-md-3 header-left">
+          <i class="far fa-bars bar"></i>
+          <!-- <i class="far fa-times bar"></i> -->
+          <div class="logo-pc">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="254" height="50.8"
+              viewBox="0 0 254 50.8">
+              <image id="Shape_9" data-name="Shape 9" width="254" height="50.8"
+                xlink:href="data:img/png;base64,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" />
+            </svg>
+          </div>
+          <div class="logo-mb">
+
+          </div>
+        </div>
+        <div class="col-md-6 header-middle">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-text"><i class="far fa-search" style='cursor: pointer;'
+                  id="togglePassword"></i></span>
+              <input class="form-control" type='text' id='search' placeholder="Tìm kiếm vấn đề y khoa bạn quan tâm..."
+                value="">
+            </div>
+          </div>
+          <div class="notification">
+            <a href="#" class="alter" title="Thông báo">
+              <i class="fas fa-bell"></i>
+              <sub class="haveit"></sub>
+            </a>
+            <a href="#" class="email" title="Tin nhắn">
+              <i class="fas fa-envelope"></i>
+              <sub class="haveit"></sub>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 header-right ps-4">
+          <div class="user-header">
+            <div class="circle-avatar">
+              <img src="../../assets/images/avatar-small.jpg" alt="" class='rounded-circle'>
+            </div>
+            <div class="user-header-text">
+              <span class="user-header-text--name">Jennie Hạnh Lê</span>
+              <span class="user-header-text--subName">Bác sĩ, Tp. Hồ Chí Minh</span>
+            </div>
+          </div>
+          <div class="user-button" id='mnr-button'>
+            <i class="fas fa-grip-lines"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mnr-parent">
+      <div class="mnr-menu">
+        <ul>
+          <li><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-1.svg" alt="" srcset="">
+              </span>
+              Chỉnh sửa hồ sơ của bạn
+            </a></li>
+          <li><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-2.svg" alt="" srcset="">
+              </span>
+              Xác minh chứng chỉ
+            </a></li>
+          <li class="endGroup"><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-3.svg" alt="" srcset="">
+
+              </span>
+              Mời bạn bè tham gia
+            </a></li>
+          <li class='active'><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-3.svg" alt="" srcset="">
+
+              </span>
+              Quản lý sự kiện của bạn
+            </a></li>
+          <li><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-5.svg" alt="" srcset="">
+
+              </span>
+              Yêu cầu tổ chức sự kiện
+            </a></li>
+          <li class='endGroup'><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-6.svg" alt="" srcset="">
+
+              </span>
+              Tổ chức sự kiện cho đơn vị
+            </a></li>
+          <li><a href="#!"><span class="mnr-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25"
+                  height="25" viewBox="0 0 25 25">
+                  <image id="job" width="25" height="25"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAC7ElEQVRIiY3We6jfcxgH8NexnTacXMMQUo7bGlEYco25NdLa1Ni/kktChKLU+EeSZZryl8uS/DUWlrD8MbSMTZO5zY4iDEducTh69P7Vt+/5/s75PfXt9Ln8nvfzvJ/383zO0JzlG7VsX6zDKCYbR//gd/yV9VzsiT3aDho2jOdndxxcj7NxHP7FBMZyVnuHZ/9LfBVHh/UBOwYbukCOxk/4vLF3Lu7EwY1MhgN0Pz7tk8ku7OhCfxEPNtav4RVsxtU4J6DXYRzb8XgfkApqqCuTN/JJpH9j7/C/EieHrrdxA+7ArzgSV3YhTVe0tTgUx+LGODohmb6MSwN2SkWLxQGdYl3qKjsKO5PBVQE8A++17l2LZyOGUuNbCbynygpyY79M7sLrkezaRFkAt+DnCOMKPIdHsamc4VusGJSuU/FMov8k9BRtq3Aebst50XQ79scI1ieggUDmRJan44vsjSTSD6vBkk2Plm/SEyWUAwcFmQjP21OfsvcxLw04ngnQs3lp2Pr7S9tZl4Qli2X5CmwR7saryWQi6lqNLXG8G5fgibazfuo6Kc6K8+Up8LoorWk/hJ7R3N0RWn/Lnf/V1S+TrXgH27AAZ+FyPJT94XR99cnN+Cz1ebgBMC1dR+B8XJBCr4qjhbgPF8dh9dF8fJ+CfxzpT7Guwo8k+j+xX3pjLE9A9cZpUd2yyLUmwdc4sQ8rUzLZgAcaEZWiXght1XSzoqyhgP6R2fVkP4A2yK5ksSXr3emFa7JemTFzfNS1tfWozQjyUXR/QNZjqcf8rC/M3fGMmsrkTOwTEbRtZ7Kf7IHUe3EIDmpk8GMDoO7c22jK6Wwo39NtkEU5KPsujbiw4aiouWgQWjpsVg/kTbybxvkAS6Ki9Y1M1uR8JluTJl6KR3qjZ3b4Xp3RcE+ouTUU9jLZliE4k9Wdqlt1flnRPtkr/E0tMdTo7v1XUrw+NiA99du98FIyr8k82tXxNeAuyys3kESnsbl46j+aZrj4qHiKvQAAAABJRU5ErkJggg==" />
+                </svg>
+              </span>
+              Xem ca tư vấn/hội chẩn
+            </a></li>
+          <li class='endGroup'><a href="#!"><span class="mnr-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25"
+                  height="25" viewBox="0 0 25 25">
+                  <image id="handshake" width="25" height="25"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAC+ElEQVRIiaXVa8jfYxgH8M/m2QGT2JzWXhhyWiuyMTmkFC3lWAtrhewVr/BiJVqbPOQwUUhkLUWOIYeiHjJacprShFmTR2PzOMVmB4+u+v7r599+v//K9eb+Ha77+t7XdX2/1z1hytXv6rBj8AoO6fD5A1fgizaHoS4ErMT+OAO/YQZ+xBH4GdPwNoZxcVuQiQNApuBNfI/DsQlHZz0UP+R/Z5xBINuxC8dicb5djwm4CnOxEzu6ggwq14ysG7EizzdlHc46HYf9H5B3cBd+z4kfwOaUblnKeR3u7Aqy39Dca7v+v4/vwrKZuCcEeAlT8TcezvfOTKalmXvrTwVZg6fSmyvxdE5+a3yqPyckq55tw2QcXCQpkM8ro/zYkRr32zgmpXy9DB7BhSlj08r3yPhU1pMKZBZOSVbF/49bQGrj87gDJ0U7ldln2JOMelaHWYvb8E0F/gkbcGK4P9ZS2l8wJ4BjLRn3rDIYjd/4UE5wFLbi064G4gWsT+ZChuGwrWx39FMAB+XbSK/ZpdyleLED4AJc3gBYk2CTM7c2h4njKf3U+D3Z1MmevTSxaZsyt57FmRHoe2HnLX2+MwNYNrtJ290DQL7G+WHZ/TgP54YE3/b57mxQenW/NpoMWYi3cEnjW5XlMqxCqXgJjsu+0YZflfDXPH9UIP/kZUvGhwR4PdN3NeY3AvQOti19qcE5G3/iy/zbmNKWHdjTyX0R1sm4Fzdn8lYZrsGHuBQvYwEej++8OmnEfHx69BpOxdmZJLMK5O5s/AqfpNa7QsH1mU114nUR4Ae5ArbnQjsnwccizBvxTBh2Wh16KNO035ZlQ2VwAxaFfW/kuTaPpNQTMw22xH96v6DbpvDa9GdhNg1nGoxGSyO5XxZEX3NSsvnJ8D/WdZ+sCq0fjBD/yvStMf8cbs8henPtrLZAgy6th4odeCLvj2E5XsWjyaJ61AqwLyBldTPWXCtGFWgBnZ4eHBBBdtq+gJRVJnUN1N1TjCqA0sFFKWO74V+TRbgNaNL1qgAAAABJRU5ErkJggg==" />
+                </svg>
+              </span>
+              Yêu cầu tư vấn/hội chẩn
+            </a></li>
+          <li><a href="#!"><span class="mnr-icon">
+                <embed src="../../assets/icons/mnr-9.svg" alt="" srcset="">
+              </span>
+              Đăng xuất
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <nav class="mnl-button" id='mnlButtonShow'>
+    <i class="far fa-angle-right"></i>
+  </nav>
+  <div class="mnl">
+    <div class="top-logo">
+      <div class="logo-pc">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="254" height="50.8"
+          viewBox="0 0 254 50.8">
+          <image id="Shape_9" data-name="Shape 9" width="254" height="50.8"
+            xlink:href="data:img/png;base64,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" />
+        </svg>
+      </div>
+      <i class="far fa-times bar"></i>
+    </div>
+    <ul class="lv1">
+      <li class='endGroup'>
+        <a href="#!">
+          <embed src="../../assets/icons/mnl-1.svg" type="" class="icon">
+          <span>Trang chính</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="./event.html">
+          <embed src="../../assets/icons/mnl-2.svg" type="" class="icon">
+          <span>Sự kiện online</span>
+        </a>
+      </li>
+      <li class='hasChild endGroup'>
+        <a data-bs-toggle="collapse" href="#ktyk" aria-expanded="false" aria-controls="ktyk">
+          <embed src="../../assets/icons/mnl-3.svg" type="" class="icon">
+          <span>Kiến thức y khoa</span>
+        </a>
+        <ul class="lv2 collapse" id="ktyk">
+          <li><a href="#!">Thông tin</a></li>
+          <li><a href="#!">Hỗ trợ</a></li>
+        </ul>
+      </li>
+      <li class='endGroup'>
+        <a href="#!">
+          <embed src="../../assets/icons/mnl-4.svg" type="" class="icon">
+          <span>Tư vấn/Hội chuẩn</span>
+        </a>
+      </li>
+      <li class='hasChild'>
+        <a data-bs-toggle="collapse" href="#tknd" aria-expanded="false" aria-controls="tknd">
+          <embed src="../../assets/icons/mnl-5.svg" type="" class="icon">
+          <span>Tài khoản người dùng</span>
+        </a>
+        <ul class="lv2 collapse" id="tknd">
+          <li><a href="#!">Thông tin</a></li>
+          <li><a href="#!">Hỗ trợ</a></li>
+        </ul>
+      </li>
+      <li class='hasChild'>
+        <a data-bs-toggle="collapse" href="#tthr" aria-expanded="false" aria-controls="tthr">
+          <embed src="../../assets/icons/mnl-6.svg" type="" class="icon">
+          <span>Thông tin & Hỗ trợ</span>
+        </a>
+        <ul class="lv2 collapse" id="tthr">
+          <li><a href="#!">Thông tin</a></li>
+          <li><a href="#!">Hỗ trợ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div class="overpage"></div>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Trang chính</a></li>
+          <li class="breadcrumb-item active"><a href="#">Sự kiện</a></li>
+        </ol>
+      </nav>
+      <h1 class="name-page">Sự kiện</h1>
+      <div class="row mt-4">
+        <div class="col-md-8">
+          <div class="box-tile mb-4">
+            <div class="row">
+              <div class="col-md-6 pe-0 thumb">
+                <div class="thumnails-template">
+                  <div class="thumnails-content">
+                    <img src="../../assets/images/img-2.jpg" alt="">
+                  </div>
+                </div>
+                <div class="thumb-layer">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                    height="30" viewBox="0 0 145 30">
+                    <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                      xlink:href="data:img/png;base64,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" />
+                  </svg>
+                  <span class='text-uppercase'>CASE SERIES</span>
+                </div>
+              </div>
+              <div class="col-md-6 content">
+                <div class="content-top bg-default">
+                  <div class="content-top--left">
+                    <a href="" class="title h3 text-uppercase">SỰ KIỆN TIÊU BIỂU</a>
+                  </div>
+                  <div class="content-top--right">
+                    <a href="">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                        height="15" viewBox="0 0 17 15">
+                        <image id="forward" width="17" height="15"
+                          xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="content-tabs mt-2">
+                  <ul>
+                    <li><a href="#">Pediatrics </a></li>
+                    <li><a href="#">Carditology</a></li>
+                    <li><a href="#">Carditology</a></li>
+                  </ul>
+                </div>
+                <div class="content-main">
+                  <div>
+                    <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                      khác?</a>
+                  </div>
+                  <div>
+                    <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                  </div>
+                  <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                      maecenas accumsan lacus vel </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 info ps-4 pe-4 py-3">
+                <div class="brand ps-2">
+                  <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35"
+                      height="33" viewBox="0 0 35 33">
+                      <image id="Ellipse_1_copy" data-name="Ellipse 1 copy" width="35" height="33"
+                        xlink:href="data:img/png;base64,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" />
+                    </svg>
+                  </div>
+                  <div class="brand-info">
+                    <span class="brand-info1">Đơn vị tổ chức</span>
+                    <span class="brand-info2 text-uppercase">AN KHANG HEALTHCARE</span>
+                  </div>
+                </div>
+                <div class="brand">
+                  <div class="brand-logo">
+                    <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                  </div>
+                  <div class="brand-info">
+                    <span class="brand-info1">Người trình bày</span>
+                    <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                  </div>
+                </div>
+                <div class="event-time">
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                      height="21" viewBox="0 0 21 21">
+                      <image id="clock" width="21" height="21"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                    </svg>
+                    10:30 am - 11:00 am
+                  </div>
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="21" viewBox="0 0 17 21">
+                      <image id="calendar" width="17" height="21"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                    </svg>
+                    T7 - 11/06/202
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 ps-4 pe-4 event-register">
+                <div class="event-register--left">
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-edit"></i></div>
+                    <strong>Cho phép đăng ký</strong>
+                  </div>
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+                    <span><strong>136</strong> lượt thích</span>
+                  </div>
+                  <div class="item">
+                    <div class="icon"><i class="fas fa-user-plus"></i></div>
+                    <span><strong>87</strong> người đã đăng ký</span>
+                  </div>
+                </div>
+                <div class="event-register--right">
+                  <button class="btn btn-primary thin btn-submit text-uppercase">
+                    Đăng ký <i class="fas fa-edit noborder"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <section class='update-info mb-4 card-parent'>
+            <div class="card card-ds">
+              <div class="card-header">
+                Sự kiện online tại MedVerse
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                  viverra maecenas accumsan lacus vel facilisis.</p>
+                <ul class="task">
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="box-list col-md-4 mb-4">
+          <div class="box-list-item">
+            <div class="thumb">
+              <div class="thumnails-template">
+                <div class="thumnails-content">
+                  <img src="../../assets/images/img-2.jpg" alt="">
+                </div>
+              </div>
+              <div class="thumb-layer">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                  height="30" viewBox="0 0 145 30">
+                  <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span class='text-uppercase'>CASE SERIES</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">SỰ KIỆN DÀNH CHO BẠN</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="content-tabs mt-2">
+                <ul>
+                  <li><a href="#">Pediatrics </a></li>
+                  <li><a href="#">Carditology</a></li>
+                  <li><a href="#">Carditology</a></li>
+                </ul>
+              </div>
+              <div class="content-main">
+                <div>
+                  <a href="#" class="title h4">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng
+                    lọc</a>
+                </div>
+              </div>
+            </div>
+            <div class="info py-3">
+              <div class="event-time">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                    height="21" viewBox="0 0 21 21">
+                    <image id="clock" width="21" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                  </svg>
+                  10:30 am - 11:00 am
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                    height="21" viewBox="0 0 17 21">
+                    <image id="calendar" width="17" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                  </svg>
+                  T7 - 11/06/202
+                </div>
+              </div>
+              <div class="brand">
+                <div class="brand-logo">
+                  <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                </div>
+                <div class="brand-info">
+                  <span class="brand-info1">Người trình bày</span>
+                  <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-register">
+              <div class="event-register--left">
+                <div class="item">
+                  <div class="icon"><i class="fas fa-user-plus"></i></div>
+                  <span><strong>Chưa cho đăng ký</strong></span>
+                </div>
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="12" height="18" viewBox="0 0 12 18">
+                      <image id="bookmark" width="12" height="18"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAAuklEQVQokd3SMUtCURjG8Z+3EBt0aLvNLY4h+TGaFKHJ1bk5SHBubMihqa22PkYI7s0NjiqEUFw5coMLXeme1Wd7z3n+53kP71tLp+cwxgUSZP6qhjWejvGM6xJTmQZJhHmnkHCLk4r+TQAmsQkPaFX0fwVgFJMQPr2I8K+SmNd/Ew4VuEMHn1WAm3x7Z2jjvXCXBeCncNDDfaFe4hIved0IQIpvdPG6p8U+HlE/al6dnmGI+T/zeMPHFiFLGyDhqnqjAAAAAElFTkSuQmCC" />
+                    </svg>
+                  </div>
+                  <a href="#" class="color-second font-sm text-decoration fw-semibold text-uppercase">LƯU SỰ KIỆN</a>
+                </div>
+              </div>
+              <div class="event-register--right">
+                <button class="btn btn-info thin btn-submit text-uppercase w-auto ms-0">
+                  xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 mb-4">
+          <div class="box-list-2">
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">KHÁM PHÁ CÁC SỰ KIỆN ĐÃ DIỄN RA</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="sumary">
+              Rất nhiều sự kiện online về y khoa đã được diễn ra trên nền tảng MedVerse. Các bạn có thể khám phá thông
+              tin
+              các sự kiện này để có thể tìm kiếm theo nhu cầu của mình và đề xuất MedVerse tổ chức lại những chủ đề này
+            </div>
+            <div class="list-item">
+              <div class="swiper swListItem">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide item">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="thumb-layer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96"
+                          height="20" viewBox="0 0 96 20">
+                          <image id="Shape_9" data-name="Shape 9" width="96" height="20"
+                            xlink:href="data:img/png;base64,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" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-tabs mt-2">
+                      <ul>
+                        <li><a href="#">Pediatrics </a></li>
+                        <li><a href="#">Carditology</a></li>
+                      </ul>
+                    </div>
+                    <div class="content-main">
+                      <div>
+                        <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                          khác?</a>
+                      </div>
+                      <div>
+                        <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                      </div>
+                      <div class="content-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                          maecenas accumsan lacus vel </p>
+                      </div>
+                    </div>
+                    <div class="info py-2">
+                      <div class="brand">
+                        <div class="brand-logo">
+                          <img src="../../assets/images/avatar-small.jpg" class="rounded-circle" alt="">
+                        </div>
+                        <div class="brand-info">
+                          <span class="brand-info1">Người trình bày</span>
+                          <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                        </div>
+                      </div>
+                      <a href="#" class="icon-readmore">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px"
+                          height="13px">
+                          <path fill-rule="evenodd" fill="rgb(254, 254, 254)"
+                            d="M0.007,12.993 L1.796,6.500 L0.007,0.006 L9.993,6.500 L0.007,12.993 Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="event-register">
+                      <div class="event-register--left">
+                        <div class="item">
+                          <div class="icon"><i class="fas fa-user-plus"></i></div>
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đăng ký</span>
+                        </div>
+                        <div class="item">
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đánh giá</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide item">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="thumb-layer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96"
+                          height="20" viewBox="0 0 96 20">
+                          <image id="Shape_9" data-name="Shape 9" width="96" height="20"
+                            xlink:href="data:img/png;base64,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" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-tabs mt-2">
+                      <ul>
+                        <li><a href="#">Pediatrics </a></li>
+                        <li><a href="#">Carditology</a></li>
+                      </ul>
+                    </div>
+                    <div class="content-main">
+                      <div>
+                        <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                          khác?</a>
+                      </div>
+                      <div>
+                        <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                      </div>
+                      <div class="content-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                          maecenas accumsan lacus vel </p>
+                      </div>
+                    </div>
+                    <div class="info py-2">
+                      <div class="brand">
+                        <div class="brand-logo">
+                          <img src="../../assets/images/avatar-small.jpg" class="rounded-circle" alt="">
+                        </div>
+                        <div class="brand-info">
+                          <span class="brand-info1">Người trình bày</span>
+                          <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                        </div>
+                      </div>
+                      <a href="#" class="icon-readmore">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px"
+                          height="13px">
+                          <path fill-rule="evenodd" fill="rgb(254, 254, 254)"
+                            d="M0.007,12.993 L1.796,6.500 L0.007,0.006 L9.993,6.500 L0.007,12.993 Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="event-register">
+                      <div class="event-register--left">
+                        <div class="item">
+                          <div class="icon"><i class="fas fa-user-plus"></i></div>
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đăng ký</span>
+                        </div>
+                        <div class="item">
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đánh giá</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide item">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="thumb-layer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96"
+                          height="20" viewBox="0 0 96 20">
+                          <image id="Shape_9" data-name="Shape 9" width="96" height="20"
+                            xlink:href="data:img/png;base64,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" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-tabs mt-2">
+                      <ul>
+                        <li><a href="#">Pediatrics </a></li>
+                        <li><a href="#">Carditology</a></li>
+                      </ul>
+                    </div>
+                    <div class="content-main">
+                      <div>
+                        <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                          khác?</a>
+                      </div>
+                      <div>
+                        <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                      </div>
+                      <div class="content-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                          maecenas accumsan lacus vel </p>
+                      </div>
+                    </div>
+                    <div class="info py-2">
+                      <div class="brand">
+                        <div class="brand-logo">
+                          <img src="../../assets/images/avatar-small.jpg" class="rounded-circle" alt="">
+                        </div>
+                        <div class="brand-info">
+                          <span class="brand-info1">Người trình bày</span>
+                          <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                        </div>
+                      </div>
+                      <a href="#" class="icon-readmore">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px"
+                          height="13px">
+                          <path fill-rule="evenodd" fill="rgb(254, 254, 254)"
+                            d="M0.007,12.993 L1.796,6.500 L0.007,0.006 L9.993,6.500 L0.007,12.993 Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="event-register">
+                      <div class="event-register--left">
+                        <div class="item">
+                          <div class="icon"><i class="fas fa-user-plus"></i></div>
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đăng ký</span>
+                        </div>
+                        <div class="item">
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đánh giá</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide item">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="thumb-layer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96"
+                          height="20" viewBox="0 0 96 20">
+                          <image id="Shape_9" data-name="Shape 9" width="96" height="20"
+                            xlink:href="data:img/png;base64,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" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-tabs mt-2">
+                      <ul>
+                        <li><a href="#">Pediatrics </a></li>
+                        <li><a href="#">Carditology</a></li>
+                      </ul>
+                    </div>
+                    <div class="content-main">
+                      <div>
+                        <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                          khác?</a>
+                      </div>
+                      <div>
+                        <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                      </div>
+                      <div class="content-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                          maecenas accumsan lacus vel </p>
+                      </div>
+                    </div>
+                    <div class="info py-2">
+                      <div class="brand">
+                        <div class="brand-logo">
+                          <img src="../../assets/images/avatar-small.jpg" class="rounded-circle" alt="">
+                        </div>
+                        <div class="brand-info">
+                          <span class="brand-info1">Người trình bày</span>
+                          <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                        </div>
+                      </div>
+                      <a href="#" class="icon-readmore">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px"
+                          height="13px">
+                          <path fill-rule="evenodd" fill="rgb(254, 254, 254)"
+                            d="M0.007,12.993 L1.796,6.500 L0.007,0.006 L9.993,6.500 L0.007,12.993 Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="event-register">
+                      <div class="event-register--left">
+                        <div class="item">
+                          <div class="icon"><i class="fas fa-user-plus"></i></div>
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đăng ký</span>
+                        </div>
+                        <div class="item">
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đánh giá</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide item">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                      <div class="thumb-layer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96"
+                          height="20" viewBox="0 0 96 20">
+                          <image id="Shape_9" data-name="Shape 9" width="96" height="20"
+                            xlink:href="data:img/png;base64,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" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="content-tabs mt-2">
+                      <ul>
+                        <li><a href="#">Pediatrics </a></li>
+                        <li><a href="#">Carditology</a></li>
+                      </ul>
+                    </div>
+                    <div class="content-main">
+                      <div>
+                        <a href="#" class="title h3">ECG Case Series - Ca lâm sàng nhịp chậm: AV block hay nguyên nhân
+                          khác?</a>
+                      </div>
+                      <div>
+                        <span class="text-uppercase ps-3 d-inline-block">MINI WEBINAR</span>
+                      </div>
+                      <div class="content-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                          labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra
+                          maecenas accumsan lacus vel </p>
+                      </div>
+                    </div>
+                    <div class="info py-2">
+                      <div class="brand">
+                        <div class="brand-logo">
+                          <img src="../../assets/images/avatar-small.jpg" class="rounded-circle" alt="">
+                        </div>
+                        <div class="brand-info">
+                          <span class="brand-info1">Người trình bày</span>
+                          <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                        </div>
+                      </div>
+                      <a href="#" class="icon-readmore">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px"
+                          height="13px">
+                          <path fill-rule="evenodd" fill="rgb(254, 254, 254)"
+                            d="M0.007,12.993 L1.796,6.500 L0.007,0.006 L9.993,6.500 L0.007,12.993 Z" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="event-register">
+                      <div class="event-register--left">
+                        <div class="item">
+                          <div class="icon"><i class="fas fa-user-plus"></i></div>
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đăng ký</span>
+                        </div>
+                        <div class="item">
+                          <span><strong>96 </strong> người</span></br>
+                          <span>đã đánh giá</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <section class='update-info mb-4 card-parent'>
+            <div class="card card-ds">
+              <div class="card-header">
+                Sự kiện online tại MedVerse
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                  viverra maecenas accumsan lacus vel facilisis.</p>
+                <ul class="task">
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="box-list col-md-4 mb-4">
+          <div class="box-list-item">
+            <div class="thumb">
+              <div class="thumnails-template">
+                <div class="thumnails-content">
+                  <img src="../../assets/images/img-2.jpg" alt="">
+                </div>
+              </div>
+              <div class="thumb-layer">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                  height="30" viewBox="0 0 145 30">
+                  <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span class='text-uppercase'>CASE SERIES</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">SỰ KIỆN DÀNH CHO BẠN</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="content-tabs mt-2">
+                <ul>
+                  <li><a href="#">Pediatrics </a></li>
+                  <li><a href="#">Carditology</a></li>
+                  <li><a href="#">Carditology</a></li>
+                </ul>
+              </div>
+              <div class="content-main">
+                <div>
+                  <a href="#" class="title h4">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng
+                    lọc</a>
+                </div>
+              </div>
+            </div>
+            <div class="info py-3">
+              <div class="event-time">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                    height="21" viewBox="0 0 21 21">
+                    <image id="clock" width="21" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                  </svg>
+                  10:30 am - 11:00 am
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                    height="21" viewBox="0 0 17 21">
+                    <image id="calendar" width="17" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                  </svg>
+                  T7 - 11/06/202
+                </div>
+              </div>
+              <div class="brand">
+                <div class="brand-logo">
+                  <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                </div>
+                <div class="brand-info">
+                  <span class="brand-info1">Người trình bày</span>
+                  <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-register">
+              <div class="event-register--left">
+                <div class="item">
+                  <div class="icon"><i class="fas fa-user-plus"></i></div>
+                  <span><strong>Chưa cho đăng ký</strong></span>
+                </div>
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="12" height="18" viewBox="0 0 12 18">
+                      <image id="bookmark" width="12" height="18"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAAuklEQVQokd3SMUtCURjG8Z+3EBt0aLvNLY4h+TGaFKHJ1bk5SHBubMihqa22PkYI7s0NjiqEUFw5coMLXeme1Wd7z3n+53kP71tLp+cwxgUSZP6qhjWejvGM6xJTmQZJhHmnkHCLk4r+TQAmsQkPaFX0fwVgFJMQPr2I8K+SmNd/Ew4VuEMHn1WAm3x7Z2jjvXCXBeCncNDDfaFe4hIved0IQIpvdPG6p8U+HlE/al6dnmGI+T/zeMPHFiFLGyDhqnqjAAAAAElFTkSuQmCC" />
+                    </svg>
+                  </div>
+                  <a href="#" class="color-second font-sm text-decoration fw-semibold text-uppercase">LƯU SỰ KIỆN</a>
+                </div>
+              </div>
+              <div class="event-register--right">
+                <button class="btn btn-info thin btn-submit text-uppercase w-auto ms-0">
+                  xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-list col-md-4 mb-4">
+          <div class="box-list-item">
+            <div class="thumb">
+              <div class="thumnails-template">
+                <div class="thumnails-content">
+                  <img src="../../assets/images/img-2.jpg" alt="">
+                </div>
+              </div>
+              <div class="thumb-layer">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                  height="30" viewBox="0 0 145 30">
+                  <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span class='text-uppercase'>CASE SERIES</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">SỰ KIỆN DÀNH CHO BẠN</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="content-tabs mt-2">
+                <ul>
+                  <li><a href="#">Pediatrics </a></li>
+                  <li><a href="#">Carditology</a></li>
+                  <li><a href="#">Carditology</a></li>
+                </ul>
+              </div>
+              <div class="content-main">
+                <div>
+                  <a href="#" class="title h4">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng
+                    lọc</a>
+                </div>
+              </div>
+            </div>
+            <div class="info py-3">
+              <div class="event-time">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                    height="21" viewBox="0 0 21 21">
+                    <image id="clock" width="21" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                  </svg>
+                  10:30 am - 11:00 am
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                    height="21" viewBox="0 0 17 21">
+                    <image id="calendar" width="17" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                  </svg>
+                  T7 - 11/06/202
+                </div>
+              </div>
+              <div class="brand">
+                <div class="brand-logo">
+                  <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                </div>
+                <div class="brand-info">
+                  <span class="brand-info1">Người trình bày</span>
+                  <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-register">
+              <div class="event-register--left">
+                <div class="item">
+                  <div class="icon"><i class="fas fa-user-plus"></i></div>
+                  <span><strong>Chưa cho đăng ký</strong></span>
+                </div>
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="12" height="18" viewBox="0 0 12 18">
+                      <image id="bookmark" width="12" height="18"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAAuklEQVQokd3SMUtCURjG8Z+3EBt0aLvNLY4h+TGaFKHJ1bk5SHBubMihqa22PkYI7s0NjiqEUFw5coMLXeme1Wd7z3n+53kP71tLp+cwxgUSZP6qhjWejvGM6xJTmQZJhHmnkHCLk4r+TQAmsQkPaFX0fwVgFJMQPr2I8K+SmNd/Ew4VuEMHn1WAm3x7Z2jjvXCXBeCncNDDfaFe4hIved0IQIpvdPG6p8U+HlE/al6dnmGI+T/zeMPHFiFLGyDhqnqjAAAAAElFTkSuQmCC" />
+                    </svg>
+                  </div>
+                  <a href="#" class="color-second font-sm text-decoration fw-semibold text-uppercase">LƯU SỰ KIỆN</a>
+                </div>
+              </div>
+              <div class="event-register--right">
+                <button class="btn btn-info thin btn-submit text-uppercase w-auto ms-0">
+                  xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <section class='update-info mb-4 card-parent'>
+            <div class="card card-ds">
+              <div class="card-header">
+                Sự kiện online tại MedVerse
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                  viverra maecenas accumsan lacus vel facilisis.</p>
+                <ul class="task">
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
+                </ul>
+                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="box-list col-md-4 mb-4">
+          <div class="box-list-item">
+            <div class="thumb">
+              <div class="thumnails-template">
+                <div class="thumnails-content">
+                  <img src="../../assets/images/img-2.jpg" alt="">
+                </div>
+              </div>
+              <div class="thumb-layer">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                  height="30" viewBox="0 0 145 30">
+                  <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span class='text-uppercase'>CASE SERIES</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">SỰ KIỆN DÀNH CHO BẠN</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="content-tabs mt-2">
+                <ul>
+                  <li><a href="#">Pediatrics </a></li>
+                  <li><a href="#">Carditology</a></li>
+                  <li><a href="#">Carditology</a></li>
+                </ul>
+              </div>
+              <div class="content-main">
+                <div>
+                  <a href="#" class="title h4">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng
+                    lọc</a>
+                </div>
+              </div>
+            </div>
+            <div class="info py-3">
+              <div class="event-time">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                    height="21" viewBox="0 0 21 21">
+                    <image id="clock" width="21" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                  </svg>
+                  10:30 am - 11:00 am
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                    height="21" viewBox="0 0 17 21">
+                    <image id="calendar" width="17" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                  </svg>
+                  T7 - 11/06/202
+                </div>
+              </div>
+              <div class="brand">
+                <div class="brand-logo">
+                  <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                </div>
+                <div class="brand-info">
+                  <span class="brand-info1">Người trình bày</span>
+                  <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-register">
+              <div class="event-register--left">
+                <div class="item">
+                  <div class="icon"><i class="fas fa-user-plus"></i></div>
+                  <span><strong>Chưa cho đăng ký</strong></span>
+                </div>
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="12" height="18" viewBox="0 0 12 18">
+                      <image id="bookmark" width="12" height="18"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAAuklEQVQokd3SMUtCURjG8Z+3EBt0aLvNLY4h+TGaFKHJ1bk5SHBubMihqa22PkYI7s0NjiqEUFw5coMLXeme1Wd7z3n+53kP71tLp+cwxgUSZP6qhjWejvGM6xJTmQZJhHmnkHCLk4r+TQAmsQkPaFX0fwVgFJMQPr2I8K+SmNd/Ew4VuEMHn1WAm3x7Z2jjvXCXBeCncNDDfaFe4hIved0IQIpvdPG6p8U+HlE/al6dnmGI+T/zeMPHFiFLGyDhqnqjAAAAAElFTkSuQmCC" />
+                    </svg>
+                  </div>
+                  <a href="#" class="color-second font-sm text-decoration fw-semibold text-uppercase">LƯU SỰ KIỆN</a>
+                </div>
+              </div>
+              <div class="event-register--right">
+                <button class="btn btn-info thin btn-submit text-uppercase w-auto ms-0">
+                  xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box-list col-md-4 mb-4">
+          <div class="box-list-item">
+            <div class="thumb">
+              <div class="thumnails-template">
+                <div class="thumnails-content">
+                  <img src="../../assets/images/img-2.jpg" alt="">
+                </div>
+              </div>
+              <div class="thumb-layer">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="145"
+                  height="30" viewBox="0 0 145 30">
+                  <image id="Shape_9" data-name="Shape 9" width="145" height="30"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span class='text-uppercase'>CASE SERIES</span>
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-top bg-last">
+                <div class="content-top--left">
+                  <a href="" class="title h3 text-uppercase">SỰ KIỆN DÀNH CHO BẠN</a>
+                </div>
+                <div class="content-top--right">
+                  <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                      height="15" viewBox="0 0 17 15">
+                      <image id="forward" width="17" height="15"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAYAAAACsSQRAAABR0lEQVQ4jYXSv0pdQRDH8U+MRAm2wU4RG4WghUFMUFER1EZB7ARBX8UqhU9gaRNiQGNl/oggFhGstBLEyjcwgYDRCQt7cb2eex04nNn5zX53hhkRsRYRBxHRHxEqvu6I2I2I9Qa6FqziAEeY8tTWcY1BbFfoEmk7E2cj4j4ipute+hQR49k/i4idqkpeZt4+ZvANc8U7f9GX/QF0YacsJEGiOP/ANHbzv2a3hT+EXmzVAq0VHR7iHV5X9v9Q0XwzSLLzwr9pkLdXtvOcvcWfJjl9z0E2MYGrBvoCfjaDpGm1YQM9Ffp8ntJqI8h3dGAFL7JfX8FXjKeJVkHS9qbJjOZzJ+4KfTGvwHscp0CClKAEeFUAkv3L1SRbwheM4FctoYSkRUujHKur7A0uMInP+ICTMiFd+p2Dl1iuaC/tw0e0Yxinj1T8BxJamXeSyox7AAAAAElFTkSuQmCC" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="content-tabs mt-2">
+                <ul>
+                  <li><a href="#">Pediatrics </a></li>
+                  <li><a href="#">Carditology</a></li>
+                  <li><a href="#">Carditology</a></li>
+                </ul>
+              </div>
+              <div class="content-main">
+                <div>
+                  <a href="#" class="title h4">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng
+                    lọc</a>
+                </div>
+              </div>
+            </div>
+            <div class="info py-3">
+              <div class="event-time">
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21"
+                    height="21" viewBox="0 0 21 21">
+                    <image id="clock" width="21" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAACW0lEQVQ4jZXVXYjWVRAG8J+6UpFhqWGIIkjalRd2kRCGglgEhYWiLESEYnohZtAHuBBBKn1YWYFhIF2IYuKaYC0EFiXVVVBYiFamN6UghhgYUaTM8rxweN3XrbmZM3P+85znzMyZ/5ihoSE95B4sx0LchYm4hB9xFIP4eqTQkUBnYjse6XVaIx/hafzcOsd2fbQUJxrAtzAPt2EObsZcbMv+Q/l+RS/QB3EIN4bBGGzEZNyLn/A4puLZ7B/EOHyAZd2gt+PjrN/Dw3gU53EkewN4N/YFrAzQ9sQdwPQWdG9OrgSvxSthMaW5yeZmPQn7Alg53R///k6hKkfH4izg+/EJnsxVXxqlWMtC4N/Ezy+mq7O5I7rTDreE3TtdIFXp3xt7MPrl6DUFuijGq1icxJe8HsANeC2+6obZONN10IqmI+7rS2OX/IYlOIc74luPP/EcPs8tnsfdDeBxTMDF2LP60kIl07AbtzbMpH1uwFPYgk1dLOs2e9JBJeML9K8E/Vr5CKtuqRT0N4GtvBFCL8T3z9i8Zan0Lz0CXcd/E75Nm5WcLtAvYjyTVrrSI/h68mFuU/Jlge6KsTF66f8EfCx6IHpXgX7XsK0mPoy3/yPgzhSpClz1+QZfdZ5pf3S99zdT6WLwRwOwqllfTlHXYWvDdnha9cU4m+c2mDRMy8DYk/FWg+L95Ptippkw7ACWPl2LdvTV1YtxBdaJpasvTwZwRobI93gRfzeAT4TAsIw0+euFVU5rsIwmnyVVP7Qfdq7fSjF7IDOh/lELcGemfuXyVBUj8/PTa6JxFbxCg9SJw3idAAAAAElFTkSuQmCC" />
+                  </svg>
+                  10:30 am - 11:00 am
+                </div>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17"
+                    height="21" viewBox="0 0 17 21">
+                    <image id="calendar" width="17" height="21"
+                      xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAVCAYAAACg/AXsAAABjElEQVQ4jaWUvS9EURDFf8turIgofITIColKqRASKgoqEaIQPYU/gERFrdIqdPgHnq0URBChkoiCxiY+so3dsNbHkknOk+tl34bdk9y8d+bOnHfvvJmJeJ6Hgw6gHTgiHH1AFrj0PaoCrk3ARAkBwwjQ7RrsJAlgXIIFIAfkgUbgKyDwLL9acdvfiwL7QKeMh8AasAXUhJxkHhgCpsTzptrqOJwBp8BtiEBaPueOLWYnyQBxGQaBuuCdHVjOFoE294om0uIYerVKYTKwV28iG0BDkST+BRHgxURelcRyRfImslBG8C/Y33msUCPrVuwnMAb0q14M6+LL4tfAgFbaD3RFrFqTwAlwJZvPt8XvgWOtjB8YdUSqgR2V/bBsK8A00CXeA2wqoT9Far3zEKiVinLyASTUXLuyLYnPil+I27ordh2rk5Ten/RMqY5uxHPihvdiIlEl8U13N6wCc0Czk5ODYE4s0J8NtmFTy4WNCH9MGKw5rUldxCwnFlwJ4naSUWBGv/g//WMfLwDJb4YAUNAPwzrxAAAAAElFTkSuQmCC" />
+                  </svg>
+                  T7 - 11/06/202
+                </div>
+              </div>
+              <div class="brand">
+                <div class="brand-logo">
+                  <img src="../../assets/images/avatar-small.jpg" class='rounded-circle' alt="">
+                </div>
+                <div class="brand-info">
+                  <span class="brand-info1">Người trình bày</span>
+                  <span class="brand-info2 text-uppercase">BS. Bùi Gia An</span>
+                </div>
+              </div>
+            </div>
+            <div class="event-register">
+              <div class="event-register--left">
+                <div class="item">
+                  <div class="icon"><i class="fas fa-user-plus"></i></div>
+                  <span><strong>Chưa cho đăng ký</strong></span>
+                </div>
+                <div class="item">
+                  <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="12" height="18" viewBox="0 0 12 18">
+                      <image id="bookmark" width="12" height="18"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAASCAYAAABvqT8MAAAAuklEQVQokd3SMUtCURjG8Z+3EBt0aLvNLY4h+TGaFKHJ1bk5SHBubMihqa22PkYI7s0NjiqEUFw5coMLXeme1Wd7z3n+53kP71tLp+cwxgUSZP6qhjWejvGM6xJTmQZJhHmnkHCLk4r+TQAmsQkPaFX0fwVgFJMQPr2I8K+SmNd/Ew4VuEMHn1WAm3x7Z2jjvXCXBeCncNDDfaFe4hIved0IQIpvdPG6p8U+HlE/al6dnmGI+T/zeMPHFiFLGyDhqnqjAAAAAElFTkSuQmCC" />
+                    </svg>
+                  </div>
+                  <a href="#" class="color-second font-sm text-decoration fw-semibold text-uppercase">LƯU SỰ KIỆN</a>
+                </div>
+              </div>
+              <div class="event-register--right">
+                <button class="btn btn-info thin btn-submit text-uppercase w-auto ms-0">
+                  xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer></footer>
+
+  <!-- Popperjs JS v2.11.5-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+
+  <!-- Bootstrap v5.2.0-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery v3.6.0 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- My site -->
+  <script src="../../scripts/default.js"></script>
+  <script>
+    var swiper = new Swiper(".sw-banner", {
+      effect: "fade",
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+    var swiper = new Swiper(".swListItem", {
+      slidesPerView: 3,
+      spaceBetween: 1,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>
