@@ -24,6 +24,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* END SCROLL BAR */
+.color-primary {
+  color: $color-primary;
+}
 
 .color-second {
   color: $color-second;
@@ -136,6 +139,7 @@ body::-webkit-scrollbar-thumb {
   box-shadow: 0 0 10px 1px #ccc;
   overflow: hidden;
   position: relative;
+  background-color: #fff;
 
   .thumb {
     position: relative;
@@ -388,6 +392,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 10px 1px #ccc;
     overflow: hidden;
     position: relative;
+    background-color: #fff;
 
     .thumb {
       position: relative;
@@ -663,6 +668,7 @@ body::-webkit-scrollbar-thumb {
       &--left {
         padding: 12px 10px;
         position: relative;
+        width: 100%;
 
         .title {
           padding-left: 45px;
@@ -987,6 +993,23 @@ body::-webkit-scrollbar-thumb {
 
   &.show {
     display: block;
+  }
+}
+
+.readMore {
+  color: $color-primary;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-block;
+
+  &:after {
+    content: '\f0da';
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    padding-left: 5px;
+
   }
 }
 

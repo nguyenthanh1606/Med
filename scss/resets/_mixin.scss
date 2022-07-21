@@ -38,6 +38,7 @@
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: $line;
+  /* number of lines to show */
   line-clamp: $line;
   -webkit-box-orient: vertical;
   line-height: $lineHeight;

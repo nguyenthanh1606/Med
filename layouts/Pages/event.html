@@ -221,7 +221,17 @@
           <li class="breadcrumb-item active"><a href="#">Sự kiện</a></li>
         </ol>
       </nav>
-      <h1 class="name-page">Sự kiện</h1>
+      <div class='namePage'>
+        <h1 class="name-page">Sự kiện</h1>
+        <button class="filter">
+          <span>Tìm kiếm sự kiện</span>
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="21"
+            viewBox="0 0 23 21">
+            <image id="setting" width="23" height="21"
+              xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAVCAYAAACt4nWrAAABc0lEQVQ4ja2Uv0sDQRCFv4BYiBZCFISApViJNmongliIjY1gG6wCCvb+D6KItV0KgwERWwuxioKFPxAbRUSCjU2CkvhkwhZnspdczhs47hbezXw7+3aQlMSTkrQr6UXSvaSc5Uwq+YlaY90qHgAzRI8UUAP2gENgCrjy/P2Jp2LUyDvq5TC9kWeAyS7ILerAOVABBoEy0NOkOU2q54uSKgHoW0npVONUk4kRYA6oAkXLGJa8H8gB1rKSO7juw7PFXknPTWdTiNMuI19yVjSL/QALIdZcAY6BISDrdhcWatizC+vtOKKNqD+YfVaB2QD5PDDhIbp07yNgOAJ5yderAUnlJoizuD33VU4DmwG37Mcxy398Pupu9gdw4VXEvJFZSbVOVjVymw3jHSi/ApNvDHjwaGxK5gPrR6tQjeisLUe0HVFfNysWgOk21GbRb+DOrd/baJ8C39dx+t0n6dVDapPxjzbugWYkFSW9SbqRtNaikfgFuK+SvKyYpTYAAAAASUVORK5CYII=" />
+          </svg>
+        </button>
+      </div>
       <div class="row mt-4">
         <div class="col-md-8">
           <div class="box-tile mb-4">
@@ -470,6 +480,14 @@
               <div class="content-top bg-last">
                 <div class="content-top--left">
                   <a href="" class="title h3 text-uppercase">KHÁM PHÁ CÁC SỰ KIỆN ĐÃ DIỄN RA</a>
+                  <button class="filter filter-child">
+                    <span>Tìm kiếm sự kiện</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="21"
+                      viewBox="0 0 23 21">
+                      <image id="setting" width="23" height="21"
+                        xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAVCAYAAACt4nWrAAABc0lEQVQ4ja2Uv0sDQRCFv4BYiBZCFISApViJNmongliIjY1gG6wCCvb+D6KItV0KgwERWwuxioKFPxAbRUSCjU2CkvhkwhZnspdczhs47hbezXw7+3aQlMSTkrQr6UXSvaSc5Uwq+YlaY90qHgAzRI8UUAP2gENgCrjy/P2Jp2LUyDvq5TC9kWeAyS7ILerAOVABBoEy0NOkOU2q54uSKgHoW0npVONUk4kRYA6oAkXLGJa8H8gB1rKSO7juw7PFXknPTWdTiNMuI19yVjSL/QALIdZcAY6BISDrdhcWatizC+vtOKKNqD+YfVaB2QD5PDDhIbp07yNgOAJ5yderAUnlJoizuD33VU4DmwG37Mcxy398Pupu9gdw4VXEvJFZSbVOVjVymw3jHSi/ApNvDHjwaGxK5gPrR6tQjeisLUe0HVFfNysWgOk21GbRb+DOrd/baJ8C39dx+t0n6dVDapPxjzbugWYkFSW9SbqRtNaikfgFuK+SvKyYpTYAAAAASUVORK5CYII=" />
+                    </svg>
+                  </button>
                 </div>
                 <div class="content-top--right">
                   <a href="">
@@ -832,22 +850,66 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <section class='update-info mb-4 card-parent'>
+          <section class='topic mb-4 card-parent'>
             <div class="card card-ds">
-              <div class="card-header">
-                Sự kiện online tại MedVerse
+              <div class="card-header color-primary">
+                Chủ đề chính của tháng này
               </div>
               <div class="card-body">
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                  viverra maecenas accumsan lacus vel facilisis.</p>
-                <ul class="task">
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                </ul>
-                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+                <div class="card-desc">
+                  <p>Nunc imperdiet, magna nec consequat posuere, felis odio vulputate urna, sed iaculis lorem nulla sit amet arcu. Ut sit amet tincidunt arcu, ut molestie ex. Integer pharetra libero eu sapien malesuada, eu aliquam </p>
+                </div>
+                <div class="item-first">
+                  <div class="item-first--left">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-first--right">
+                    <h4 class="title">Cao huyết áp ở trẻ em - đề xuất về chính sách y tế và lâm sàng</h4>
+                    <p class="category text-uppercase">BÀI VIẾT CHUYÊN MÔN</p>
+                  </div>
+                  <div class="item-first--desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div class="readMore"><a href="#!">Xem tiếp</a></div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer--left">
+                  <button class="filter filter-child">
+                    <span>Tìm kiếm sự kiện</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="21" viewBox="0 0 23 21">
+                      <image id="setting" width="23" height="21" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAVCAYAAACt4nWrAAABn0lEQVQ4ja3VP0hWYRTH8Y8hUmJIQy1aDg1hS9RSTUoQFEb0BxJxCVqCiIZm54Yg0BKXlqYaDP9QUFtQNFlDUEPkJuogNERFUhYPnFcut/v+uZf3Bw/3uc/z3C/nnOecczsWFp9pgzowiQv4jgeY7mwHGYs4l3lP8M0En8GJEqBk5W/cxyMcy4Frupvg1ytaezbgfXX2exN8P46WBP/Bq5i/CU/yIX6eFlZiVNXXCMscdgXjE66260Jf4iCG8RPzClypqQc30I+liG0zreFx9kwRvAsfcSCzdh6Xy7qT4CORiinFtnA6B066hIsR1724Ft7V01+8S/BWS3Qo4GO406rloziZsfwUjhScfRvPWexrwfKlot6yG8vhfk0vomhKqehCv+EwbmWyZbosWINU3MBEk28HorI3okr/044qFkW2LMcFv8bTepbvwWAT2K+UWjE/hIe5/ZSqU3iSWfuc4KvY2YK1t3EPV+rs34xR01ZnuHS8ATSl6GY0o6T1Bme/ZObvq/zmupPLBX38TDSwbVW50B/RLhaiWX3AeB4M/wCbf1FwIxp7JgAAAABJRU5ErkJggg=="/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-footer--right">
+                  <i class="fal fa-chevron-left"></i>
+                  <i class="fal fa-chevron-right"></i>
+                </div>
               </div>
             </div>
           </section>
@@ -1051,22 +1113,66 @@
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <section class='update-info mb-4 card-parent'>
+          <section class='topic mb-4 card-parent'>
             <div class="card card-ds">
-              <div class="card-header">
-                Sự kiện online tại MedVerse
+              <div class="card-header color-primary">
+                Chủ đề chính của tháng này
               </div>
               <div class="card-body">
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-                  viverra maecenas accumsan lacus vel facilisis.</p>
-                <ul class="task">
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                  <li><span>Các chủ đề đang được quan tâm nhiều nhất trong giới y khoa</span></li>
-                </ul>
-                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+                <div class="card-desc">
+                  <p>Nunc imperdiet, magna nec consequat posuere, felis odio vulputate urna, sed iaculis lorem nulla sit amet arcu. Ut sit amet tincidunt arcu, ut molestie ex. Integer pharetra libero eu sapien malesuada, eu aliquam </p>
+                </div>
+                <div class="item-first">
+                  <div class="item-first--left">
+                    <div class="thumb">
+                      <div class="thumnails-template">
+                        <div class="thumnails-content">
+                          <img src="../../assets/images/img-2.jpg" alt="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-first--right">
+                    <h4 class="title">Cao huyết áp ở trẻ em - đề xuất về chính sách y tế và lâm sàng</h4>
+                    <p class="category text-uppercase">BÀI VIẾT CHUYÊN MÔN</p>
+                  </div>
+                  <div class="item-first--desc">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div class="readMore"><a href="#!">Xem tiếp</a></div>
+                  </div>
+                </div>
+                <div class="item-list">
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                  <div class="item-list--child">
+                    <p class="date-item">04/06/2022</p>
+                    <h5 class="title-item">Cập nhật hướng dẫn AAP về cao huyết áp trẻ em. P1: Hướng dẫn sàng lọc</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="card-footer--left">
+                  <button class="filter filter-child">
+                    <span>Tìm kiếm sự kiện</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="23" height="21" viewBox="0 0 23 21">
+                      <image id="setting" width="23" height="21" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAVCAYAAACt4nWrAAABn0lEQVQ4ja3VP0hWYRTH8Y8hUmJIQy1aDg1hS9RSTUoQFEb0BxJxCVqCiIZm54Yg0BKXlqYaDP9QUFtQNFlDUEPkJuogNERFUhYPnFcut/v+uZf3Bw/3uc/z3C/nnOecczsWFp9pgzowiQv4jgeY7mwHGYs4l3lP8M0En8GJEqBk5W/cxyMcy4Frupvg1ytaezbgfXX2exN8P46WBP/Bq5i/CU/yIX6eFlZiVNXXCMscdgXjE66260Jf4iCG8RPzClypqQc30I+liG0zreFx9kwRvAsfcSCzdh6Xy7qT4CORiinFtnA6B066hIsR1724Ft7V01+8S/BWS3Qo4GO406rloziZsfwUjhScfRvPWexrwfKlot6yG8vhfk0vomhKqehCv+EwbmWyZbosWINU3MBEk28HorI3okr/044qFkW2LMcFv8bTepbvwWAT2K+UWjE/hIe5/ZSqU3iSWfuc4KvY2YK1t3EPV+rs34xR01ZnuHS8ATSl6GY0o6T1Bme/ZObvq/zmupPLBX38TDSwbVW50B/RLhaiWX3AeB4M/wCbf1FwIxp7JgAAAABJRU5ErkJggg=="/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="card-footer--right">
+                  <i class="fal fa-chevron-left"></i>
+                  <i class="fal fa-chevron-right"></i>
+                </div>
               </div>
             </div>
           </section>
