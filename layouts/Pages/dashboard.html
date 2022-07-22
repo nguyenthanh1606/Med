@@ -19,7 +19,7 @@
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
   <!-- Swiper -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8.3.1/swiper-bundle.min.css" />
 
   <!-- Fonts Ansoware Pro 5.2 -->
   <link rel="stylesheet" href="../../css/all.css">
@@ -163,13 +163,13 @@
     </div>
     <ul class="lv1">
       <li class='active endGroup'>
-        <a href="#!">
+        <a href="./dashboard.html">
           <embed src="../../assets/icons/mnl-1.svg" type="" class="icon">
           <span>Trang chính</span>
         </a>
       </li>
       <li>
-        <a href="#!">
+        <a href="./event.html">
           <embed src="../../assets/icons/mnl-2.svg" type="" class="icon">
           <span>Sự kiện online</span>
         </a>
@@ -872,7 +872,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
                   viverra maecenas accumsan lacus vel facilisis.</p>
-                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block">Cập nhật</a>
+                <a href="#" class="btn btn-primary btn-submit text-uppercase w-auto ms-0 d-inline-block px-3">Cập nhật</a>
               </div>
             </div>
           </section>
@@ -886,7 +886,46 @@
                   facilisis. </p>
 
                 <div class="calendar-eventOfme">
-
+                  <div class="top-calendar">
+                    <div class="top--left">
+                      <span class="text-bold">Tháng 6</span>
+                      <button type="button" class="btn-icon"><i class="fas fa-caret-left"></i></button>
+                      <button type="button" class="btn-icon"><i class="fas fa-caret-right"></i></button>
+                    </div>
+                    <div class="top--right">
+                      <button type='button' class='btn-link'>Tuần trước</button>
+                      <button type='button' class='btn-link'>Tuần sau</button>
+                    </div>
+                  </div>
+                  <div class="main-calendar">
+                    <ul>
+                      <li><span>Sun</span><span>5</span></li>
+                      <li><span>Mon</span><span>6</span></li>
+                      <li><span>Tue</span><span>7</span></li>
+                      <li class="dateNow"><span>Wed</span><span class="haveEvent">8</span></li>
+                      <li><span>Thu</span><span>9</span></li>
+                      <li><span>Fri</span><span>10</span></li>
+                      <li><span>Sat</span><span class="haveEvent">11</span></li>
+                    </ul>
+                  </div>
+                  <div class="bottom-calendar">
+                    <div class="bottom--left">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+                        <image id="video-tutorial_copy" data-name="video-tutorial copy" width="22" height="22" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAACQklEQVQ4ja3VSYjPYRzH8deMPxn7VpaDA8pwENkOcpCLQlmyzYVcOFjSyJIUSpaDiElKUUqRbCEHBy6y5CBOkoM0luz7PvrW91+D/29qhm9N8/ye5fN8n8/3/Tz/qn0NDd2wD8NR5d+iCfdRX8Ju9MGYfxQtxwnsCuGOaJ9Z/4+MO+F9CH/FU1wtmPwjx9/md1f0Ralgfgi3L2XjIo62kMkQTMgTXceVFuZ+x8xSZtSzYFI1LuA57mamddk/DZ8rrOkdlhQdpxxn8A6b8STb8nTnMbloYXULotOTljnYgxs4nB5H1r3yf6uF5+JktqPAk9KOqMcMbAsv2yIcCH7KdlNaERuNRG1+F1rZkseB38Tke2AzEubhHI7jVluEG7AUC7EMI3Agx+ZjXI61WjgwXJC47cdpTMUsTEl/PxUtDo+74FXB+G0MwjfMxth8ZGqTkkrxMp6JEH6BRYlWjwp/X7ADNZnEtuS50ty4HIvxM6yox14cjA48y80GoDvWYiU+puAhbMXO/H6Uov3TgehbXUqRuhQKz0alt9tz0pu0YHwe+2Ze8RXogHU4lRR1RqM/OG5Mdldl1huy7wMuRxZYgmt4nZmub7ZJ97JoJSpqUnxTikX0w+gsYlyUx8n1QwzDchxL4d+oaB6xYCjuZCGioJHVgxQenM/mxhyPVzHICcbDyorCkWnsHIUKVuP6bslfmLhp5TibJ42xS/luBAlHkpq/rAgi7uVtapeFCMHwOChYk/NicZBRZjvwi0cq+I5HHvwCB/mHKv3IZg0AAAAASUVORK5CYII="/>
+                      </svg>
+                    </div>
+                    <div class="bottom--right">
+                      <div class="tag text-uppercase">Sự kiện đăng ký</div>
+                      <div class="title text-bold">Hội thảo online: Chủng ngừa ở trẻ mắc tim bẩm sinh</div>
+                      <div class="date">
+                        T4 - 08/06/2022
+                        <div class="time">10:30 am - 11:00 am</div>
+                      </div>
+                      <div class='link'>
+                        <a href="#!" class="btn-second">Chi tiết</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -899,9 +938,88 @@
               <div class="card-body">
                 <p class="card-text">Tabore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.lacus vel
                   facilisis. </p>
-
-                <div class="calendar-eventOfme">
-
+                <div class="question">
+                  <div class="qa-item">
+                    <div class="qa-top">
+                      <div class="qa-top--left">
+                        <span>Câu 1</span>
+                      <button type="button" class="btn-icon"><i class="fas fa-caret-left"></i></button>
+                      <button type="button" class="btn-icon"><i class="fas fa-caret-right"></i></button>
+                      </div>
+                      <div class="qa-top--right">
+                        <span><b>123</b> người đã tham gia</span>
+                      </div>
+                    </div>
+                    <div class="qa-main">
+                      <p class="text-bold">Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel dolore magna aliqua?</p>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault">
+                          Maecenas laoreet nisl sed tellus tincidunt 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault">
+                          Maecenas laoreet nisl sed tellus tincidunt 
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Maecenas laoreet nisl sed tellus tincidunt 
+                        </label>
+                      </div>
+                      <div class='link mb-3'>
+                        <a href="#!" class="btn-second me-2">Bình chọn</a>
+                        <a href="#!" class="btn-primary">Kết quả</a>
+                      </div>
+                    </div>
+                    <div class="qa-bottom">
+                      <p class="text-bold">Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel dolore magna aliqua?</p>
+                      <ul>
+                        <li>
+                          <p>Maecenas laoreet nisl sed tellus tincidunt </p>
+                          <div class="row">
+                            <div class="col-md-9">
+                              <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <strong>34 lượt</strong>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <p>Maecenas laoreet nisl sed tellus tincidunt </p>
+                          <div class="row">
+                            <div class="col-md-9">
+                              <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <strong>34 lượt</strong>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <p>Maecenas laoreet nisl sed tellus tincidunt </p>
+                          <div class="row">
+                            <div class="col-md-9">
+                              <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <strong>34 lượt</strong>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -912,16 +1030,48 @@
                 Thông báo từ MedVerse
               </div>
               <div class="card-body">
-                <p class="card-text">Tabore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.lacus vel
-                  facilisis. </p>
-
-                <div class="calendar-eventOfme">
-
+                <div class="notifiMed-list">
+                  <div class="notifiMed-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" viewBox="0 0 30 16">
+                        <image id="Shape_6_copy" data-name="Shape 6 copy" width="30" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAABOs/SAAAB/ElEQVQ4jbXVWYiOcRTH8c8sdmPNFtkvJi4mZSKKmEiSdVCu5FJRBrfcUAolCVmKC6FQo2RrGEu4FE2JEjU1Idmu7PrXeTU9PU/MGL+79z2n8/2f9SkbcXSiLtB0NGAWeuMWduJBUejyf2RWYA/uYSWGoQqLcBfr/ge4O05jM8oKHrUfc7oSnMrZGFlm9RTL0BN90ZwXoLIT0AG4hBk5tgRZjncReyEm41U89ENnwcNxBTU5thR4NT6jGucCWtJrrIjed6jUY3G7AHoK9QGdijsZaNJQXMQoHch4Eq5hZI7tCNbjewxSY0x2eyXbBTzHNLT+DbgWlzE4x7YXW/ETS3Amhqq9Ul9XxcN/60+lnoumAuh2bAnoWpzPgb5FXUDTem3EcYxLGXfD15zAaVBOokfm/x/YgIPxuyGOSHaX2zAPLegTLagLW3XK+EbUvaTROBbHIQv9gjUBTaBdUe4s9CVmB7Q/rraDJtVUxl6mm/oGHzG+4BJ9isOQSt8vSlaf4/cICyLjgQGtzfi0lMcqJA3BhALoC8zEM2yL4HnQ5si0LeI15UCTDifwPtzMMZZ0P1rxOAIuxZgcv1T++Xgfa5qgU3L8DuFERdXiQd8i6xQ09SM9Jl2ZdGF2xOSmMielwTobH4g0C73wEJuwO+wlvycxuGkuWnE9PigH4Bc1CG2uWXOafQAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="title"><strong>Risus commodo viverra maecenas accumsan lacus vel dolore magna aliqua</strong></div>
+                      <div class="desc"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p></div>
+                      <a href="#" class="link readMore text-decoration">Xem tiếp</a>
+                    </div>
+                  </div>
+                  <div class="notifiMed-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" viewBox="0 0 30 16">
+                        <image id="Shape_6_copy" data-name="Shape 6 copy" width="30" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAABOs/SAAAB/ElEQVQ4jbXVWYiOcRTH8c8sdmPNFtkvJi4mZSKKmEiSdVCu5FJRBrfcUAolCVmKC6FQo2RrGEu4FE2JEjU1Idmu7PrXeTU9PU/MGL+79z2n8/2f9SkbcXSiLtB0NGAWeuMWduJBUejyf2RWYA/uYSWGoQqLcBfr/ge4O05jM8oKHrUfc7oSnMrZGFlm9RTL0BN90ZwXoLIT0AG4hBk5tgRZjncReyEm41U89ENnwcNxBTU5thR4NT6jGucCWtJrrIjed6jUY3G7AHoK9QGdijsZaNJQXMQoHch4Eq5hZI7tCNbjewxSY0x2eyXbBTzHNLT+DbgWlzE4x7YXW/ETS3Amhqq9Ul9XxcN/60+lnoumAuh2bAnoWpzPgb5FXUDTem3EcYxLGXfD15zAaVBOokfm/x/YgIPxuyGOSHaX2zAPLegTLagLW3XK+EbUvaTROBbHIQv9gjUBTaBdUe4s9CVmB7Q/rraDJtVUxl6mm/oGHzG+4BJ9isOQSt8vSlaf4/cICyLjgQGtzfi0lMcqJA3BhALoC8zEM2yL4HnQ5si0LeI15UCTDifwPtzMMZZ0P1rxOAIuxZgcv1T++Xgfa5qgU3L8DuFERdXiQd8i6xQ09SM9Jl2ZdGF2xOSmMielwTobH4g0C73wEJuwO+wlvycxuGkuWnE9PigH4Bc1CG2uWXOafQAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="title"><strong>Risus commodo viverra maecenas accumsan lacus vel dolore magna aliqua</strong></div>
+                      <div class="desc"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p></div>
+                      <a href="#" class="link readMore text-decoration">Xem tiếp</a>
+                    </div>
+                  </div>
+                  <div class="notifiMed-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="16" viewBox="0 0 30 16">
+                        <image id="Shape_6_copy" data-name="Shape 6 copy" width="30" height="16" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAQCAYAAAABOs/SAAAB/ElEQVQ4jbXVWYiOcRTH8c8sdmPNFtkvJi4mZSKKmEiSdVCu5FJRBrfcUAolCVmKC6FQo2RrGEu4FE2JEjU1Idmu7PrXeTU9PU/MGL+79z2n8/2f9SkbcXSiLtB0NGAWeuMWduJBUejyf2RWYA/uYSWGoQqLcBfr/ge4O05jM8oKHrUfc7oSnMrZGFlm9RTL0BN90ZwXoLIT0AG4hBk5tgRZjncReyEm41U89ENnwcNxBTU5thR4NT6jGucCWtJrrIjed6jUY3G7AHoK9QGdijsZaNJQXMQoHch4Eq5hZI7tCNbjewxSY0x2eyXbBTzHNLT+DbgWlzE4x7YXW/ETS3Amhqq9Ul9XxcN/60+lnoumAuh2bAnoWpzPgb5FXUDTem3EcYxLGXfD15zAaVBOokfm/x/YgIPxuyGOSHaX2zAPLegTLagLW3XK+EbUvaTROBbHIQv9gjUBTaBdUe4s9CVmB7Q/rraDJtVUxl6mm/oGHzG+4BJ9isOQSt8vSlaf4/cICyLjgQGtzfi0lMcqJA3BhALoC8zEM2yL4HnQ5si0LeI15UCTDifwPtzMMZZ0P1rxOAIuxZgcv1T++Xgfa5qgU3L8DuFERdXiQd8i6xQ09SM9Jl2ZdGF2xOSmMielwTobH4g0C73wEJuwO+wlvycxuGkuWnE9PigH4Bc1CG2uWXOafQAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="title"><strong>Risus commodo viverra maecenas accumsan lacus vel dolore magna aliqua</strong></div>
+                      <div class="desc"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p></div>
+                      <a href="#" class="link readMore text-decoration">Xem tiếp</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </section>
-          <section class='notifiMed mb-4 card-parent'>
+          <section class='lastSee mb-4 card-parent'>
             <div class="card card-ds">
               <div class="card-header">
                 Nội dung bạn xem gần dây
@@ -929,9 +1079,64 @@
               <div class="card-body">
                 <p class="card-text">Tabore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.lacus vel
                   facilisis. </p>
-
-                <div class="calendar-eventOfme">
-
+                <div class="lastSee-list">
+                  <div class="lastSee-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="23" viewBox="0 0 25 23">
+                        <image id="content_copy" data-name="content copy" width="25" height="23" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAC+ElEQVRIiY3Va8ifYxwH8M/zbGxIeczG2Bha1MyxzKQc8oIU2rIXGsoLS8IcCmWvJorilVO8kWYhivJqzAjLMdtaznM+jDnbeByeR7/63rrc/R/zrft//6/rd13X9/odvr97aOSMJzW4AZdiLi7HG/gdq9pFGMN2TMGuPdsvWIy3u4mW5GBswflYjX2xA+OxdajxpzgEn2EvTG3sd2BPLOgmJjfGmdm8OuOtjW1T77bn4Xo8h6t7todwZTvRkvyW9z7YZmIcikdwAtbie6xsVk9LKP/B8H8c1uJhXJjx19gcTyr+63e2eRDJUPO/8vJJ4vsAbsbPOA7vYhGe7u3fZWckk1JNhdPxVSpsDo5O9VWljOI6vIiF2bM5+zb1iYZ7BD/hRyzHmhx6buwbMB3Hx4uRJP0lrMhlPkxYt7QkbeK3p2TXxItTsa7naRXEfngC3+VSs/B57MtwT+wDPakqORaHJRd9ghbn4MYQzWzm78W1OGgiTw7Et3kPwu54LCL8I6GpXL2a8JVI/4wQ64x3su6almRranxpFnRejud9G2bg1sxta0Q3I3MjGY+mSxyDx1uSj3AJbskNWozHg9PwbDM/KwUzH4fjgPSzi5p1Z/dL+D7MzoHtUyp/uelhlfzX89TlLgjBmzgpF+08HC1P5uHOxHIsKv5rQE4WpIRXJazjUf0SnNmsW5gme1mnucmpolfwTNS+I8+0nvpL8RengS5Ki1+RXnd7PCqNHYm7s2e3jqTa9FkTVFQfb0XxQrQyYToZV2Fj1P6vVjMcQc1p5pakOu7vfScK+zcd+v3oYl7yWCRHJX9rs6bCNdZVVxuW+iq+F6LKzxW4K7Ypme+wLiEbSl717BW+2W0Jt/gm3XY4xdDh43SEpzL+NRcqkkdzobkpoufxWn2GB5FU5z0FP2CPHNSh4l0h+KCZqzWFL6L48r4uVsQPloiLpFRa1dShEntE07pbVAkXed14IlQUOtxUP0XyJU7EC7HUIbVw76i5Ram6PP3/wN8bZbgfCIpSBAAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="category text-uppercase">Bài viết chuyên môn</div>
+                      <div class="title">Chuyển hướng tế bào T chống lại tế bào u tủy</div>
+                      <div class="bottom">
+                        <div class="content-tabs mt-2">
+                          <ul>
+                            <li><a href="#">Carditology</a></li>
+                          </ul>
+                        </div>
+                        <a href="#" class="link readMore">Xem tiếp</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lastSee-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="23" viewBox="0 0 25 23">
+                        <image id="content_copy" data-name="content copy" width="25" height="23" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAC+ElEQVRIiY3Va8ifYxwH8M/zbGxIeczG2Bha1MyxzKQc8oIU2rIXGsoLS8IcCmWvJorilVO8kWYhivJqzAjLMdtaznM+jDnbeByeR7/63rrc/R/zrft//6/rd13X9/odvr97aOSMJzW4AZdiLi7HG/gdq9pFGMN2TMGuPdsvWIy3u4mW5GBswflYjX2xA+OxdajxpzgEn2EvTG3sd2BPLOgmJjfGmdm8OuOtjW1T77bn4Xo8h6t7todwZTvRkvyW9z7YZmIcikdwAtbie6xsVk9LKP/B8H8c1uJhXJjx19gcTyr+63e2eRDJUPO/8vJJ4vsAbsbPOA7vYhGe7u3fZWckk1JNhdPxVSpsDo5O9VWljOI6vIiF2bM5+zb1iYZ7BD/hRyzHmhx6buwbMB3Hx4uRJP0lrMhlPkxYt7QkbeK3p2TXxItTsa7naRXEfngC3+VSs/B57MtwT+wDPakqORaHJRd9ghbn4MYQzWzm78W1OGgiTw7Et3kPwu54LCL8I6GpXL2a8JVI/4wQ64x3su6almRranxpFnRejud9G2bg1sxta0Q3I3MjGY+mSxyDx1uSj3AJbskNWozHg9PwbDM/KwUzH4fjgPSzi5p1Z/dL+D7MzoHtUyp/uelhlfzX89TlLgjBmzgpF+08HC1P5uHOxHIsKv5rQE4WpIRXJazjUf0SnNmsW5gme1mnucmpolfwTNS+I8+0nvpL8RengS5Ki1+RXnd7PCqNHYm7s2e3jqTa9FkTVFQfb0XxQrQyYToZV2Fj1P6vVjMcQc1p5pakOu7vfScK+zcd+v3oYl7yWCRHJX9rs6bCNdZVVxuW+iq+F6LKzxW4K7Ypme+wLiEbSl717BW+2W0Jt/gm3XY4xdDh43SEpzL+NRcqkkdzobkpoufxWn2GB5FU5z0FP2CPHNSh4l0h+KCZqzWFL6L48r4uVsQPloiLpFRa1dShEntE07pbVAkXed14IlQUOtxUP0XyJU7EC7HUIbVw76i5Ram6PP3/wN8bZbgfCIpSBAAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="category text-uppercase">Bài viết chuyên môn</div>
+                      <div class="title">Chuyển hướng tế bào T chống lại tế bào u tủy</div>
+                      <div class="bottom">
+                        <div class="content-tabs mt-2">
+                          <ul>
+                            <li><a href="#">Carditology</a></li>
+                          </ul>
+                        </div>
+                        <a href="#" class="link readMore">Xem tiếp</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lastSee-item">
+                    <div class="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="23" viewBox="0 0 25 23">
+                        <image id="content_copy" data-name="content copy" width="25" height="23" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAC+ElEQVRIiY3Va8ifYxwH8M/zbGxIeczG2Bha1MyxzKQc8oIU2rIXGsoLS8IcCmWvJorilVO8kWYhivJqzAjLMdtaznM+jDnbeByeR7/63rrc/R/zrft//6/rd13X9/odvr97aOSMJzW4AZdiLi7HG/gdq9pFGMN2TMGuPdsvWIy3u4mW5GBswflYjX2xA+OxdajxpzgEn2EvTG3sd2BPLOgmJjfGmdm8OuOtjW1T77bn4Xo8h6t7todwZTvRkvyW9z7YZmIcikdwAtbie6xsVk9LKP/B8H8c1uJhXJjx19gcTyr+63e2eRDJUPO/8vJJ4vsAbsbPOA7vYhGe7u3fZWckk1JNhdPxVSpsDo5O9VWljOI6vIiF2bM5+zb1iYZ7BD/hRyzHmhx6buwbMB3Hx4uRJP0lrMhlPkxYt7QkbeK3p2TXxItTsa7naRXEfngC3+VSs/B57MtwT+wDPakqORaHJRd9ghbn4MYQzWzm78W1OGgiTw7Et3kPwu54LCL8I6GpXL2a8JVI/4wQ64x3su6almRranxpFnRejud9G2bg1sxta0Q3I3MjGY+mSxyDx1uSj3AJbskNWozHg9PwbDM/KwUzH4fjgPSzi5p1Z/dL+D7MzoHtUyp/uelhlfzX89TlLgjBmzgpF+08HC1P5uHOxHIsKv5rQE4WpIRXJazjUf0SnNmsW5gme1mnucmpolfwTNS+I8+0nvpL8RengS5Ki1+RXnd7PCqNHYm7s2e3jqTa9FkTVFQfb0XxQrQyYToZV2Fj1P6vVjMcQc1p5pakOu7vfScK+zcd+v3oYl7yWCRHJX9rs6bCNdZVVxuW+iq+F6LKzxW4K7Ypme+wLiEbSl717BW+2W0Jt/gm3XY4xdDh43SEpzL+NRcqkkdzobkpoufxWn2GB5FU5z0FP2CPHNSh4l0h+KCZqzWFL6L48r4uVsQPloiLpFRa1dShEntE07pbVAkXed14IlQUOtxUP0XyJU7EC7HUIbVw76i5Ram6PP3/wN8bZbgfCIpSBAAAAABJRU5ErkJggg=="/>
+                      </svg>                      
+                    </div>
+                    <div class="content">
+                      <div class="category text-uppercase">Bài viết chuyên môn</div>
+                      <div class="title">Chuyển hướng tế bào T chống lại tế bào u tủy</div>
+                      <div class="bottom">
+                        <div class="content-tabs mt-2">
+                          <ul>
+                            <li><a href="#">Carditology</a></li>
+                          </ul>
+                        </div>
+                        <a href="#" class="link readMore">Xem tiếp</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
