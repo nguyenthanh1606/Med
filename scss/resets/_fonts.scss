@@ -1,3 +1,24 @@
-html, body {
+html,
+body {
   font-family: 'Quicksand', serif;
+}
+
+@font-face {
+  font-family: 'UTM Neo Sans Intel';
+  src: url('../fonts/UTMNeoSansIntel/UTMNeoSansIntel.eot');
+  src: url('../fonts/UTMNeoSansIntel/UTMNeoSansIntel.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/UTMNeoSansIntel/UTMNeoSansIntel.woff') format('woff'),
+    url('../fonts/UTMNeoSansIntel/UTMNeoSansIntel.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'UTM Bebas';
+  src: url('../fonts/UTMBebas/UTMBebas.eot');
+  src: url('../fonts/UTMBebas/UTMBebas.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/UTMBebas/UTMBebas.woff') format('woff'),
+    url('../fonts/UTMBebas/UTMBebas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

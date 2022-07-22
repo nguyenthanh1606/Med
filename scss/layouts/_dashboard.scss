@@ -582,6 +582,7 @@
         --bs-progress-height: 1.5rem;
         --bs-progress-bar-bg: #2860c9;
         --bs-progress-bg: #f2f0f0;
+        border: 1px solid #e0e0e0;
 
         .progress-bar {
           font-family: $font-primary;
@@ -649,13 +650,14 @@
     }
 
     .content {
-      .category{
+      .category {
         text-transform: uppercase;
         color: $color-second;
         font-size: 14px;
         margin-bottom: 8px;
         font-weight: 600;
       }
+
       .title {
         font-family: $font-primary;
         font-weight: 600;
@@ -663,17 +665,24 @@
         font-size: 1.05rem;
         @include maxline(2, 1);
       }
-      .bottom{
+
+      .bottom {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
-        .content-tabs{
+
+        .content-tabs {
           padding-left: 0;
         }
       }
 
     }
   }
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
