@@ -556,8 +556,8 @@ body::-webkit-scrollbar-thumb {
     }
 
     .info {
-      border-top: 1px solid #cbcccd;
-      border-bottom: 1px solid #cbcccd;
+      border-top: 1px solid #e7ebef;
+      border-bottom: 1px solid #e7ebef;
       display: flex;
       flex-direction: row;
 
@@ -613,13 +613,13 @@ body::-webkit-scrollbar-thumb {
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        border-bottom: 1px solid $color-border;
+        border-bottom: 1px solid #e7ebef;
 
         .item {
           padding: 10px 15px;
 
           &:not(:last-child) {
-            border-right: 1px solid $color-border;
+            border-right: 1px solid #e7ebef;
           }
 
           .icon {
@@ -636,7 +636,6 @@ body::-webkit-scrollbar-thumb {
 
       &--right {
         padding: 8px 15px;
-        border-left: 1px solid $color-border;
       }
     }
 
